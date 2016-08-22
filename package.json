@@ -1,7 +1,7 @@
 {
-  "name": "base",
-  "version": "2.0.0",
-  "description": "Elbit Foundation Base",
+  "name": "rotasul",
+  "version": "0.0.0",
+  "description": "Elbit Rotasul Project",
   "main": "GulpFile.js",
   "devDependencies": {
     "browser-sync": "^2.12.5",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elbitdigital/base.git"
+    "url": "https://github.com/elbitdigital/rotasul.git"
   },
   "keywords": [
     "letsmowe",
@@ -43,6 +43,6 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elbitdigital/base/issues"
+    "url": "https://github.com/elbitdigital/rotasul/issues"
   }
 }
