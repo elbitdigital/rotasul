@@ -1,4 +1,4 @@
-const _PROJECTNAME = 'base';
+const _PROJECTNAME = 'rotasul';
 
 var gulp = require('gulp'),
 	watch = require('gulp-watch'),
@@ -39,7 +39,7 @@ const tinypngToken = false;
 
 var source = {
 	content: '*',
-	location: 'src/'
+	location: '_src/'
 };
 
 source.css = {
