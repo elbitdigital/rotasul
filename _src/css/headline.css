@@ -1,0 +1,27 @@
+
+/* Headline */
+
+.Headline {
+	width: 100%;
+	position: relative;
+}
+
+/* Healine title */
+
+.Headline-title { }
+
+/* Headline subtitle */
+
+.Headline-subtitle { }
+
+
+@media (min-width: 48em) {
+
+	/* Headline */
+
+	.Headline {
+		width: 50%;
+		max-width: 50%;
+	}
+
+}

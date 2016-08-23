@@ -1,0 +1,26 @@
+
+/* Location */
+
+.Location {
+	position: relative;
+	width: 100%;
+}
+
+/* Location map */
+
+.Location-map {
+	height: 300px;
+	width: 100%;
+}
+
+
+@media (min-width: 48em) {
+
+	/* Location */
+
+	.Location {
+		width: 50%;
+		max-width: 50%;
+	}
+
+}
