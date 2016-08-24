@@ -128,7 +128,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  height: 12em;
+  height: 16em;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -163,11 +163,12 @@
 }
 
 .ServicesItem--restaurante .ServicesItem-background {
-  background-image: url("../img/sobremesa.jpg");
+  background-image: url("../img/DSC03411.JPG");
+  background-position: center;
 }
 
 .ServicesItem--posto .ServicesItem-background {
-  background-image: url("../img/posto-ipiranga-uniao-da-vitoria-02.jpg");
+  background-image: url("../img/DSC03403.JPG");
   background-position: center;
 }
 
@@ -212,7 +213,7 @@
   line-height: 1.2;
 }
 
-@media (min-width: 60em) {
+@media (min-width: 48em) {
   /* Services Item */
 
   .ServicesItem {
