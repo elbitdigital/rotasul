@@ -2,13 +2,23 @@
 /* Headline */
 
 .Headline {
-	width: 100%;
 	position: relative;
+	width: 100%;
 }
 
-/* Healine title */
+/* Headline title */
 
-.Headline-title { }
+.Headline-title {
+	margin: 1em 0;
+	/*width: 28em;*/
+}
+
+/* Healine title h2 */
+
+.Headline-title h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
 
 /* Headline subtitle */
 
@@ -22,6 +32,12 @@
 	.Headline {
 		width: 50%;
 		max-width: 50%;
+	}
+
+	/* Healine title h2 */
+
+	.Headline-title h2 {
+		text-align: left;
 	}
 
 }

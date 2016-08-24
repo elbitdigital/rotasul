@@ -2,14 +2,27 @@
 /* Location */
 
 .Location {
+	border: solid 1px black;
+	display: inline-block;
 	position: relative;
 	width: 100%;
+	margin: 1.5em 1em 1em;
+}
+
+.Location:after {
+	content: '';
+	display: block;
+	margin-top: 75%;
 }
 
 /* Location map */
 
 .Location-map {
-	height: 300px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
 }
 
@@ -19,8 +32,13 @@
 	/* Location */
 
 	.Location {
-		width: 50%;
-		max-width: 50%;
+		width: 45%;
+		max-width: 45%;
+		margin: 6em 1em 1em;
+	}
+
+	.Location:after {
+		margin-top: 65%;
 	}
 
 }

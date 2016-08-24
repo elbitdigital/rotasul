@@ -39,10 +39,10 @@
 	/* Lead inner */
 
 	.Lead-inner {
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
 		-webkit-flex-flow: row;
 		flex-flow: row;
 	}
-
-
 
 }
