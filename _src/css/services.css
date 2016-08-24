@@ -1,0 +1,23 @@
+
+/* Services */
+
+.Services {
+	position: relative;
+	width: 100%;
+}
+
+/* Services inner */
+
+.Services-inner {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	max-width: 72em;
+	width: 100%;
+	padding: 2.25em 1em;
+}
