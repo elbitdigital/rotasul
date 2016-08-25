@@ -9,6 +9,10 @@
 	width: 100%;
 }
 
+.soft-break {
+	white-space: pre-line;
+}
+
 @media (min-width: 60em) {
 
 	.container {

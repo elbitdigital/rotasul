@@ -1,0 +1,37 @@
+
+/* Footer */
+
+.Footer {
+	position: relative;
+	width: 100%;
+}
+
+/* Footer background */
+
+.Footer-background {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+/* Footer inner */
+
+.Footer-inner {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+}
+
+.Footer-brand .Brand-text {
+	text-align: center;
+}

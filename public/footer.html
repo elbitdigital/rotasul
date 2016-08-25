@@ -17,33 +17,60 @@
 
 <body>
 
+<div class="Brand Header-brand" style="display: none;">
+
+	<div class="Logo Logo--header">
+
+		<div id="logo" class="Logo-inner"></div>
+
+	</div>
+
+</div>
+
 <footer id="rodape" class="Footer">
 
 	<div class="Footer-background"></div>
 
 	<div class="Footer-inner container">
 
-		<div class="FooterBrand">
+		<div class="Brand Footer-brand">
 
-			<div class="Logo Logo--footer FooterBrand-logo Footer-logo">
+			<div class="Logo Logo--footer Footer-logo">
 
-				<div class="Logo-select-area">
+				<!--<div class="Logo-select-area">-->
 
-					<div id="logo-footer" class="Logo-inner"></div>
+					<div id="footer-logo" class="Logo-inner"></div>
 
-				</div>
+				<!--</div>-->
 
 			</div>
 
-			<span class="FooterBrand-text">
-				SP 270, KM 420.
-			</span>
+			<div class="Brand-text">
+
+				<p>SP 270, KM 420.</p>
+
+				<p class="soft-break">O que você merece,
+					exatamente onde você precisa.</p>
+
+			</div>
 
 		</div>
 
 	</div>
 
 </footer>
+
+<script src="dist/js/rotasul.js"></script>
+
+<script>
+
+	var logo = new Logo(document.getElementById('logo'), 'dist/svg/RotasulLogo.svg', function () {
+
+		logo.cloneTo(document.getElementById('footer-logo'));
+
+	});
+
+</script>
 
 </body>
 
