@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="roboto">
+<html lang="pt-br">
 <meta charset="UTF-8">
-<title>Rota Sul | Lanchonete, Restaurante e Posto</title>
+<title>Rota Sul | Restaurante, Lanchonete e Posto 24h na Rodovia Raposo Tavares</title>
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script>
+	(function(d) {
+		var config = {
+					kitId: 'imu7chg',
+					scriptTimeout: 3000,
+					async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
 <link rel="stylesheet" href="dist/css/rotasul.css"/>
@@ -19,7 +29,7 @@
 
 </style>
 
-<body class="">
+<body class="grey-100 tk-filson-soft">
 
 <aside class="Aside">
 
@@ -65,7 +75,7 @@
 
 </aside>
 
-<section id="principal" class="Lead grey-200">
+<section id="principal" class="Lead">
 
 	<div class="Lead-background"></div>
 
@@ -75,14 +85,14 @@
 
 			<div class="Headline-title font-amber-a700">
 
-				<h2>Sempre pensando em você!</h2>
+				<h2>Sempre pensando<br> em você!</h2>
 
 			</div>
 
-			<div class="Headline-adress">
+			<div class="Headline-subtitle font-grey-600">
 
-				<h3>Rodovia Raposo Tavares, Km 420</h3>
-				<h3>Palmital - SP</h3>
+				<p><strong>Posto, Lanchonete e Restaurante <span class="">24h</span></strong> na Rodovia Raposo Tavares, Km 420</p>
+				<p>Palmital - SP</p>
 
 			</div>
 
@@ -90,15 +100,15 @@
 
 		</div>
 
-		<div class="Location grey-400">
+		<!--<div class="Location grey-400">-->
 
-			<div id="mapa" class="Location-map">
+			<!--<div id="mapa" class="Location-map">-->
 
-				<iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=14&center=-22.7879,-50.2200&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+				<!--<iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/view?zoom=14&center=-22.7879,-50.2200&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>-->
 
-			</div>
+			<!--</div>-->
 
-		</div>
+		<!--</div>-->
 
 	</div>
 
@@ -260,6 +270,86 @@
 
 </main>
 
+<div class="Gallery-wrapper">
+
+	<div id="gallery" class="Gallery">
+
+		<div class="Gallery-background"></div>
+
+		<div class="Gallery-inner">
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/banheiro.jpg" alt="Banheiro"/>
+
+				</figure>
+
+			</div>
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/canil.jpg" alt="Canil"/>
+
+				</figure>
+
+			</div>
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/buffet%20salada.jpg" alt="Buffet Salada"/>
+
+				</figure>
+
+			</div>
+
+		</div>
+
+		<div class="GalleryNavigation Gallery-navigation">
+
+			<div class="GalleryNavigation-side-controls"></div>
+
+			<div class="GalleryNavigation-footer">
+
+				<div class="GalleryNavigation-footer-controls"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
 <section id="contato" class="Contact">
 
 	<div class="Contact-background"></div>
@@ -374,6 +464,8 @@
 		logo.cloneTo(document.getElementById('footer-logo'));
 
 	});
+
+	var gallery = new Gallery(document.getElementById('gallery'));
 
 </script>
 

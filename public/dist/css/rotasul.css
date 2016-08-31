@@ -1,9 +1,376 @@
 /*!
- * Elbit Rotasul Project v0.0.0 (http://elbit.com.br/)
- * Copyright 2013-2016 Mowe Developers
+ * Elbit RotaSul Project v0.0.1 (http://letsmowe.org/)
+ * Copyright 2013-2016 Elbit Developers
  * Licensed under MIT (https://github.com/elbitdigital/base/blob/master/LICENSE)
 */
 
+.container {
+  padding: 0 1em;
+  width: 100%;
+}
+
+.soft-break {
+  white-space: pre-line;
+}
+
+@media (min-width: 60em) {
+  .container {
+    max-width: 60em;
+  }
+}
+
+@media (min-width: 72em) {
+  .container {
+    max-width: 72em;
+  }
+}
+
+
+/* Contact Form Field */
+
+.ContactFormField {
+  border: solid 1px black;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  max-width: 24em;
+  overflow: hidden;
+  padding: 1.5em 1em 1.5em;
+  position: relative;
+  text-align: left;
+  -webkit-transition: border .3s, background .3s, padding .3s;
+  -moz-transition: border .3s, background .3s, padding .3s;
+  -ms-transition: border .3s, background .3s, padding .3s;
+  -o-transition: border .3s, background .3s, padding .3s;
+  transition: border .3s, background .3s, padding .3s;
+  width: 100%;
+}
+
+.ContactFormField--double {
+  max-width: 24em;
+  position: relative;
+  width: 100%;
+}
+
+/* Contact Form message field (textarea) */
+
+.ContactFormField--message {
+  height: 6em;
+}
+
+/* Contact Form Field input textarea */
+
+.ContactFormField input,
+.ContactFormField textarea {
+  font-size: 1em;
+  width: 100%;
+  padding: 0 .275em;
+}
+
+/* Contact Form Field label */
+
+.ContactFormField label {
+  font-size: .875em;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-transition: transform .3s;
+  -moz-transition: transform .3s;
+  -ms-transition: transform .3s;
+  -o-transition: transform .3s;
+  transition: transform .3s;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  padding-top: .75em;
+  top: 0;
+  width: 100%;
+}
+
+/* Contact Form Field focused style */
+
+.ContactFormField.is-valid {
+  border-color: #80d8ff;
+}
+
+.ContactFormField.has-focus {
+  border-color: #80d8ff;
+}
+
+/* Contact Form Field labeled style */
+
+.ContactFormField.has-label {
+  /*padding: 2.25em 1.5em .75em;*/
+  padding: 2.25em 1em .75em;
+}
+
+/* Contact Form Field labeled label style */
+
+.ContactFormField.has-label label {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Contact Form Field empty style */
+
+.ContactFormField.is-empty {
+  background-color: #ffebee;
+  /*red-50*/
+  border-color: #d50000;
+}
+
+@media (min-width: 48em) {
+  /* Contact Form Field */
+
+  .ContactFormField {
+    max-width: 33em;
+  }
+
+  /* Contact Form Field double */
+
+  .ContactFormField--double {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row-reverse;
+    flex-flow: row-reverse;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    max-width: 33em;
+  }
+
+  /* Contact Form Field split */
+
+  .ContactFormField--split {
+    max-width: 16em;
+  }
+}
+/* Contact Form Status */
+
+.ContactFormStatus {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 1em;
+}
+
+/* Contact Form Status text */
+
+.ContactFormStatus-text {
+  display: none;
+  font-size: .875em;
+  font-weight: 600;
+  margin-bottom: .5em;
+}
+
+.ContactForm.is-success .ContactFormStatus-text--success,
+.ContactForm.is-sending .ContactFormStatus-text--sending,
+.ContactForm.is-error .ContactFormStatus-text--error,
+.ContactForm.is-fail .ContactFormStatus-text--fail {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.ContactForm.is-sending .ContactFormStatus-text--sending {
+  -webkit-animation: sendAnimation infinite .6s ease;
+  -o-animation: sendAnimation infinite .6s ease;
+  animation: sendAnimation infinite .6s ease;
+}
+
+/* Send Animation keyframes */
+
+@-webkit-keyframes sendAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .48;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes sendAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .48;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes sendAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .48;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sendAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .48;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* Contact Form */
+
+.ContactForm {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  position: relative;
+  width: 100%;
+}
+
+/* Contact Form input and textarea */
+
+.ContactForm input,
+.ContactForm textarea {
+  background: none;
+  border: 0;
+  font-family: sans-serif;
+}
+
+/* Contact Form textarea (hide auto scroll on ie) */
+
+.ContactForm textarea {
+  overflow: auto;
+  resize: none;
+}
+/* Contact */
+
+.Contact {
+  padding: 2em 0;
+  position: relative;
+}
+
+/* Contact background */
+
+.Contact-background {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* Contact inner */
+
+.Contact-inner {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+/* Contact header */
+
+.Contact-header {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+/* Footer */
+
+.Footer {
+  position: relative;
+  width: 100%;
+}
+
+/* Footer background */
+
+.Footer-background {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* Footer inner */
+
+.Footer-inner {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.Footer-brand .Brand-text {
+  text-align: center;
+}
 /* Gallery Item */
 
 .GalleryItem {
@@ -145,11 +512,19 @@
 }
 
 .GalleryNavigationPill.is-active {
-  border-color: #2962ff;
+  border-color: #ffab00;
 }
 
 .GalleryNavigationPill:after {
   background-color: #eeeeee;
+  border-radius: 50%;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+
+.GalleryNavigationPill:hover:after {
+  background-color: #bdbdbd;
   border-radius: 50%;
   content: '';
   width: 100%;
@@ -236,15 +611,15 @@
 .Gallery {
   position: relative;
   margin: 0 auto;
-  height: 100%;
+  height: 13em;
   width: 100%;
 }
 
 /* Gallery wrapper */
 
 .Gallery-wrapper {
-  padding: 1em;
-  height: 13em;
+  background-color: #212121;
+  padding: 4.5em 1em;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -282,41 +657,41 @@
 }
 
 @media (min-width: 21em) {
-  /* Gallery wrapper */
+  /* Gallery */
 
-  .Gallery-wrapper {
+  .Gallery {
     height: 14em;
   }
 }
 
 @media (min-width: 24em) {
-  /* Gallery wrapper */
+  /* Gallery */
 
-  .Gallery-wrapper {
+  .Gallery {
     height: 16em;
   }
 }
 
 @media (min-width: 36em) {
-  /* Gallery wrapper */
+  /* Gallery */
 
-  .Gallery-wrapper {
+  .Gallery {
     height: 21em;
   }
 }
 
 @media (min-width: 48em) {
-  /* Gallery wrapper */
+  /* Gallery */
 
-  .Gallery-wrapper {
+  .Gallery {
     height: 30em;
   }
 }
 
 @media (min-width: 60em) {
-  /* Gallery wrapper */
+  /* Gallery */
 
-  .Gallery-wrapper {
+  .Gallery {
     height: 36em;
   }
 }
@@ -333,19 +708,14 @@
   /* Gallery */
 
   .Gallery {
-    max-width: 72em;
-  }
-
-  /* Gallery wrapper */
-
-  .Gallery-wrapper {
     height: 42em;
+    max-width: 72em;
   }
 }
 /* Header */
 
 .Header {
-  padding: 3em 1em;
+  padding: 3em 0;
 }
 
 /* Header inner */
@@ -365,6 +735,138 @@
 
 .Header-inner.container {
   max-width: 72em;
+}
+/* Headline */
+
+.Headline {
+  position: relative;
+  width: 100%;
+}
+
+/* Headline title */
+
+.Headline-title {
+  margin: 1em 0;
+  /*width: 28em;*/
+}
+
+/* Healine title h2 */
+
+.Headline-title h2 {
+  font-size: 3em;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* Headline subtitle */
+
+.Headline-subtitle p {
+  font-size: 1em;
+  font-weight: 400;
+  max-width: 14rem;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  /* Headline */
+
+  .Headline {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  /* Healine title h2 */
+
+  .Headline-title h2 {
+    text-align: left;
+  }
+}
+/* Lead */
+
+.Lead {
+  position: relative;
+  width: 100%;
+}
+
+/* Lead background */
+
+.Lead-background {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* Lead inner */
+
+.Lead-inner {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  /* Lead inner */
+
+  .Lead-inner {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+  }
+}
+/* Location */
+
+.Location {
+  border: solid 1px black;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 1.5em 1em 1em;
+}
+
+.Location:after {
+  content: '';
+  display: block;
+  margin-top: 75%;
+}
+
+/* Location map */
+
+.Location-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  /* Location */
+
+  .Location {
+    width: 45%;
+    max-width: 45%;
+    margin: 6em 1em 1em;
+  }
+
+  .Location:after {
+    margin-top: 65%;
+  }
 }
 /* Logo */
 
@@ -399,14 +901,21 @@
 
 /* Logo svg */
 
-.Logo--footer svg * {
-  fill: #ffffff;
-  -webkit-transition: fill .3s;
-  -moz-transition: fill .3s;
-  -ms-transition: fill .3s;
-  -o-transition: fill .3s;
-  transition: fill .3s;
-}
+/*.Logo--footer svg * {*/
+
+/*fill: #ffffff;*/
+
+/*-webkit-transition: fill .3s;*/
+
+/*-moz-transition: fill .3s;*/
+
+/*-ms-transition: fill .3s;*/
+
+/*-o-transition: fill .3s;*/
+
+/*transition: fill .3s;*/
+
+/*}*/
 
 .Logo--header #RotasulLogoRota {
   fill: #303f9f;
@@ -421,6 +930,16 @@
 .is-night .Logo--header #RotasulLogoRota,
 .is-night .Logo--header #RotasulLogoSul {
   fill: #ffffff;
+}
+
+.Logo--footer #RotasulLogoRota path {
+  fill: #303f9f;
+  /* indigo 700 */
+}
+
+.Logo--footer #RotasulLogoSul path {
+  fill: #ffb300;
+  /* amber 600 */
 }
 .ServicesItemFeaturesItem {
   padding: 1em;
