@@ -1,5 +1,31 @@
 /*!
- * Elbit Rotasul Project v0.0.0 (http://elbit.com.br/)
- * Copyright 2013-2016 Mowe Developers
+ * Elbit RotaSul Project v0.0.1 (http://letsmowe.org/)
+ * Copyright 2013-2016 Elbit Developers
  * Licensed under MIT (https://github.com/elbitdigital/base/blob/master/LICENSE)
 */
+
+.container {
+	padding: 0 1em;
+	width: 100%;
+}
+
+.soft-break {
+	white-space: pre-line;
+}
+
+@media (min-width: 60em) {
+
+	.container {
+		max-width: 60em;
+	}
+
+}
+
+@media (min-width: 72em) {
+
+	.container {
+		max-width: 72em;
+	}
+
+}
+

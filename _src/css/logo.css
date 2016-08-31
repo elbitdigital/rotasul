@@ -32,14 +32,14 @@
 
 /* Logo svg */
 
-.Logo--footer svg * {
-	fill: #ffffff;
-	-webkit-transition: fill .3s;
-	-moz-transition: fill .3s;
-	-ms-transition: fill .3s;
-	-o-transition: fill .3s;
-	transition: fill .3s;
-}
+/*.Logo--footer svg * {*/
+	/*fill: #ffffff;*/
+	/*-webkit-transition: fill .3s;*/
+	/*-moz-transition: fill .3s;*/
+	/*-ms-transition: fill .3s;*/
+	/*-o-transition: fill .3s;*/
+	/*transition: fill .3s;*/
+/*}*/
 
 .Logo--header #RotasulLogoRota {
 	fill: #303f9f; /* indigo 700 */
@@ -52,4 +52,12 @@
 .is-night .Logo--header #RotasulLogoRota,
 .is-night .Logo--header #RotasulLogoSul {
 	fill: #ffffff;
+}
+
+.Logo--footer #RotasulLogoRota path {
+	fill: #303f9f; /* indigo 700 */
+}
+
+.Logo--footer #RotasulLogoSul path {
+	fill: #ffb300; /* amber 600 */
 }

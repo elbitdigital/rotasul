@@ -1,0 +1,48 @@
+
+/* Lead */
+
+.Lead {
+	position: relative;
+	width: 100%;
+}
+
+/* Lead background */
+
+.Lead-background {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+/* Lead inner */
+
+.Lead-inner {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-flex-flow: column;
+	flex-flow: column;
+	position: relative;
+	width: 100%;
+}
+
+@media (min-width: 48em) {
+
+	/* Lead inner */
+
+	.Lead-inner {
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+		-webkit-flex-flow: row;
+		flex-flow: row;
+	}
+
+}
