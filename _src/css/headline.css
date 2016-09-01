@@ -16,13 +16,21 @@
 /* Healine title h2 */
 
 .Headline-title h2 {
-	text-align: center;
+	font-size: 3em;
+	line-height: 1.2;
+	font-weight: 700;
+	text-align: left;
 	text-transform: uppercase;
 }
 
 /* Headline subtitle */
 
-.Headline-subtitle { }
+.Headline-subtitle p {
+	font-size: 1em;
+	font-weight: 400;
+	max-width: 14rem;
+	width: 100%;
+}
 
 
 @media (min-width: 48em) {
