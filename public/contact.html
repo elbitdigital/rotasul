@@ -39,10 +39,21 @@
 
 				</div>
 
-				<div class="ContactFormField">
+				<div class="ContactFormField--double">
 
-					<label for="cEmail">EMAIL</label>
-					<input id="cEmail" type="email" autocomplete="off" class="ContactFormField-input" placeholder="EMAIL"/>
+					<div class="ContactFormField ContactFormField--split">
+
+						<label for="cEmail">EMAIL</label>
+						<input id="cEmail" type="email" autocomplete="off" class="ContactFormField-input" placeholder="EMAIL"/>
+
+					</div>
+
+					<div class="ContactFormField ContactFormField--split">
+
+						<label for="cPhone">TELEFONE</label>
+						<input id="cPhone" type="text" autocomplete="off" class="ContactFormField-input" placeholder="TELEFONE"/>
+
+					</div>
 
 				</div>
 
@@ -55,21 +66,21 @@
 
 				<div class="ContactFormStatus">
 
-							<span class="ContactFormStatus-text ContactFormStatus-text--sending font-light-blue-a700">
-								Enviando...
-							</span>
+					<span class="ContactFormStatus-text ContactFormStatus-text--sending font-light-blue-a700">
+						Enviando...
+					</span>
 
-							<span class="ContactFormStatus-text ContactFormStatus-text--success font-light-green-a700">
-								Enviado com sucesso!
-							</span>
+					<span class="ContactFormStatus-text ContactFormStatus-text--success font-light-green-a700">
+						Enviado com sucesso!
+					</span>
 
-							<span class="ContactFormStatus-text ContactFormStatus-text--error font-red-a700">
-								Não foi possível enviar, verifique os campos e tente novamente.
-							</span>
+					<span class="ContactFormStatus-text ContactFormStatus-text--error font-red-a700">
+						Não foi possível enviar, verifique os campos e tente novamente.
+					</span>
 
-							<span class="ContactFormStatus-text ContactFormStatus-text--fail font-red-a700">
-								Houve algum problema, tentando novamente...
-							</span>
+					<span class="ContactFormStatus-text ContactFormStatus-text--fail font-red-a700">
+						Houve algum problema, tentando novamente...
+					</span>
 
 				</div>
 
@@ -89,9 +100,7 @@
 
 	</section>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-	<script src="dist/js/rotasul.min.js"></script>
+	<script src="dist/js/rotasul.js"></script>
 
 	<script>
 
