@@ -13,7 +13,7 @@
 	var formSentCount = 0;
 	var formSentCountLimit = 2;
 
-	var requestURL = 'http://service.elbit.com.br/mailman/rotasul';
+	var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
 	var formLocked = false;
 
 	var form = {
