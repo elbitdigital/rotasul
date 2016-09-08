@@ -1,4 +1,25 @@
 
 .ServicesItemFeaturesItem {
+	-webkit-align-items: center;
+	align-items: center;
+	cursor: default;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	color: #0d47a1;
 	padding: 1em;
+}
+
+.ServicesItemFeaturesItem:hover {
+	background-color: #e0e0e0;
+}
+
+.ServicesItemFeaturesItem-icon {
+	padding: .375em;
+}
+
+.ServicesItemFeaturesItem-icon span {
+	font-size: 1.3125em;
 }

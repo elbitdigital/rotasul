@@ -4,6 +4,19 @@
  * Licensed under MIT (https://github.com/elbitdigital/base/blob/master/LICENSE)
 */
 
+body {
+	background-color: #fafafa;
+	-webkit-transition: background .6s;
+	-moz-transition: background .6s;
+	-ms-transition: background .6s;
+	-o-transition: background .6s;
+	transition: background .6s;
+}
+
+body.is-night {
+	background-color: #212121;
+}
+
 .container {
 	padding: 0 1em;
 	width: 100%;

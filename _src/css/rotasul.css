@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'rotasul';
+  src: url('../font/rotasul.eot?13184489');
+  src: url('../font/rotasul.eot?13184489#iefix') format('embedded-opentype'),
+       url('../font/rotasul.woff2?13184489') format('woff2'),
+       url('../font/rotasul.woff?13184489') format('woff'),
+       url('../font/rotasul.ttf?13184489') format('truetype'),
+       url('../font/rotasul.svg?13184489#rotasul') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'rotasul';
+    src: url('../font/rotasul.svg?13184489#rotasul') format('svg');
+  }
+}
+*/
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "rotasul";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-wifi:before { content: '\e800'; } /* '' */
+.icon-accessible:before { content: '\e801'; } /* '' */
+.icon-access_time:before { content: '\e802'; } /* '' */
+.icon-beach_access:before { content: '\e803'; } /* '' */
+.icon-child_care:before { content: '\e804'; } /* '' */
+.icon-directions_car:before { content: '\e805'; } /* '' */
+.icon-shopping_cart:before { content: '\e806'; } /* '' */
+.icon-child_friendly:before { content: '\e807'; } /* '' */
+.icon-pets:before { content: '\e808'; } /* '' */
+.icon-wc:before { content: '\e809'; } /* '' */
+.icon-local_parking:before { content: '\e80a'; } /* '' */
+.icon-lock_open:before { content: '\e80b'; } /* '' */
+.icon-menu:before { content: '\e80c'; } /* '' */
+.icon-close:before { content: '\e80d'; } /* '' */
+.icon-restaurant:before { content: '\e80e'; } /* '' */
+.icon-restaurant_menu:before { content: '\e80f'; } /* '' */
+.icon-local_convenience_store:before { content: '\e810'; } /* '' */
+.icon-phone:before { content: '\e811'; } /* '' */
+.icon-settings:before { content: '\e812'; } /* '' */
+.icon-wrench:before { content: '\e813'; } /* '' */
+.icon-road:before { content: '\e814'; } /* '' */
+.icon-map:before { content: '\e815'; } /* '' */
+.icon-local_gas_station:before { content: '\e816'; } /* '' */
+.icon-local_pizza:before { content: '\e817'; } /* '' */
+.icon-local_shipping:before { content: '\e818'; } /* '' */
+.icon-local_hospital:before { content: '\e819'; } /* '' */
+.icon-local_grocery_store:before { content: '\e81a'; } /* '' */
+.icon-local_cafe:before { content: '\e81b'; } /* '' */
+.icon-local_bar:before { content: '\e81c'; } /* '' */
+.icon-local_atm:before { content: '\e81d'; } /* '' */
+.icon-local_post_office:before { content: '\e81e'; } /* '' */
+.icon-local_printshop:before { content: '\e81f'; } /* '' */
+.icon-local_dining:before { content: '\e820'; } /* '' */
+.icon-local_hotel:before { content: '\e821'; } /* '' */
+.icon-local_mall:before { content: '\e822'; } /* '' */
+.icon-local_see:before { content: '\e823'; } /* '' */
+.icon-directions:before { content: '\e824'; } /* '' */
+.icon-store_mall_directory:before { content: '\e825'; } /* '' */
+.icon-arrow_downward:before { content: '\e826'; } /* '' */
+.icon-keyboard_arrow_left:before { content: '\e827'; } /* '' */
+.icon-keyboard_arrow_right:before { content: '\e828'; } /* '' */
+.icon-build:before { content: '\e829'; } /* '' */
+.icon-query_builder:before { content: '\e82a'; } /* '' */
+.icon-date_range:before { content: '\e82b'; } /* '' */
+.icon-star_border:before { content: '\e82c'; } /* '' */
+.icon-star:before { content: '\e82d'; } /* '' */
+.icon-star_half:before { content: '\e82e'; } /* '' */
+.icon-stars:before { content: '\e82f'; } /* '' */
+.icon-face:before { content: '\e830'; } /* '' */
+.icon-tag_faces:before { content: '\e831'; } /* '' */
+.icon-grade:before { content: '\e832'; } /* '' */
+.icon-ipiranga:before { content: '\e833'; } /* '' */
+.icon-wheel:before { content: '\ebd5'; } /* '' */
+.icon-food:before { content: '\f0f5'; } /* '' */
+.icon-direction:before { content: '\f124'; } /* '' */

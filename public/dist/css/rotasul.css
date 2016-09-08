@@ -4,6 +4,19 @@
  * Licensed under MIT (https://github.com/elbitdigital/base/blob/master/LICENSE)
 */
 
+body {
+  background-color: #fafafa;
+  -webkit-transition: background .6s;
+  -moz-transition: background .6s;
+  -ms-transition: background .6s;
+  -o-transition: background .6s;
+  transition: background .6s;
+}
+
+body.is-night {
+  background-color: #212121;
+}
+
 .container {
   padding: 0 1em;
   width: 100%;
@@ -26,6 +39,16 @@
 }
 
 
+
+.Brand--footer {
+  margin-bottom: 1em;
+}
+
+.Brand--footer .Brand-text p {
+  font-size: .75em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
 /* Contact Form Field */
 
 .ContactFormField {
@@ -750,6 +773,7 @@
 
 .Headline {
   position: relative;
+  padding-left: 1.5em;
   width: 100%;
 }
 
@@ -763,34 +787,73 @@
 /* Healine title h2 */
 
 .Headline-title h2 {
-  font-size: 3em;
+  font-size: 2.25em;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 500;
   text-align: left;
-  text-transform: uppercase;
 }
 
-/* Headline subtitle */
+/* Healine title h2 strong */
+
+.Headline-title h2 strong {
+  font-weight: 700;
+}
+
+/* Headline subtitle a */
+
+.Headline-subtitle a {
+  color: #2196f3;
+  font-size: .875em;
+  margin: .375em 0;
+}
+
+/* Headline subtitle p */
 
 .Headline-subtitle p {
-  font-size: 1em;
+  font-size: .875em;
   font-weight: 400;
-  max-width: 14rem;
+  line-height: 1.6;
+  max-width: 12rem;
   width: 100%;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 21em) {
   /* Headline */
 
   .Headline {
-    width: 50%;
+    padding-left: 2.25em;
+  }
+}
+
+@media (min-width: 48em) {
+  /* Healine title h2 */
+
+  .Headline-title h2 {
+    font-size: 3em;
+  }
+
+  /* Healine subtitle p */
+
+  .Headline-subtitle p {
+    font-size: 1em;
+    line-height: 1.72;
+    max-width: 16rem;
+  }
+}
+
+@media (min-width: 60em) {
+  /* Headline */
+
+  .Headline {
+    width: auto;
     max-width: 50%;
   }
 
   /* Healine title h2 */
 
   .Headline-title h2 {
-    text-align: left;
+    font-size: 3em;
+    max-width: 24rem;
   }
 }
 /* Lead */
@@ -798,6 +861,7 @@
 .Lead {
   position: relative;
   width: 100%;
+  margin-bottom: 2.25em;
 }
 
 /* Lead background */
@@ -838,57 +902,62 @@
     flex-flow: row;
   }
 }
+
+@media (min-width: 60em) {
+  .Lead {
+    margin-bottom: 3em;
+  }
+
+  .Lead-headline,
+  .Lead-location {
+    flex: 1;
+  }
+}
 /* Location */
 
 .Location {
-  border: solid 1px black;
-  display: inline-block;
+  display: none;
   position: relative;
   width: 100%;
-  margin: 1.5em 1em 1em;
-}
-
-.Location:after {
-  content: '';
-  display: block;
-  margin-top: 75%;
 }
 
 /* Location map */
 
 .Location-map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   /* Location */
 
   .Location {
-    width: 45%;
-    max-width: 45%;
-    margin: 6em 1em 1em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    /*padding-top: 12em;*/
   }
 
-  .Location:after {
-    margin-top: 65%;
+  .Location-map {
+    height: 24em;
   }
 }
 /* Logo */
 
 .Logo {
-  height: 6em;
+  height: 3.75em;
+}
+
+.Logo--footer {
+  margin-bottom: 1em;
 }
 
 /* Logo svg */
 
 .Logo svg {
   height: 100%;
-  width: 100%;
   display: block;
 }
 
@@ -909,6 +978,16 @@
   height: 100%;
 }
 
+.Logo--footer .Logo-inner {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 /* Logo svg */
 
 /*.Logo--footer svg * {*/
@@ -927,8 +1006,17 @@
 
 /*}*/
 
+.Logo svg,
+.Logo svg * {
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
 .Logo--header #RotasulLogoRota {
-  fill: #303f9f;
+  fill: #2196f3;
   /* indigo 700 */
 }
 
@@ -937,9 +1025,14 @@
   /* amber 600 */
 }
 
-.is-night .Logo--header #RotasulLogoRota,
+.is-night .Logo--header #RotasulLogoRota {
+  fill: #03a9f4;
+  /* light blue 500 */
+}
+
 .is-night .Logo--header #RotasulLogoSul {
-  fill: #ffffff;
+  fill: #ffca28;
+  /* amber 400 */
 }
 
 .Logo--footer #RotasulLogoRota path {
@@ -951,8 +1044,424 @@
   fill: #ffb300;
   /* amber 600 */
 }
+
+@media (min-width: 60em) {
+  /* Logo */
+
+  .Logo {
+    height: 6em;
+  }
+
+  .Logo--footer {
+    height: 4.5em;
+  }
+}
+@font-face {
+  font-family: 'rotasul';
+  src: url("../font/rotasul.eot?13184489");
+  src: url("../font/rotasul.eot?13184489#iefix") format('embedded-opentype'),
+       url("../font/rotasul.woff2?13184489") format('woff2'),
+       url("../font/rotasul.woff?13184489") format('woff'),
+       url("../font/rotasul.ttf?13184489") format('truetype'),
+       url("../font/rotasul.svg?13184489#rotasul") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'rotasul';
+    src: url('../font/rotasul.svg?13184489#rotasul') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "rotasul";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-wifi:before {
+  content: '\e800';
+}
+
+/* '' */
+
+.icon-accessible:before {
+  content: '\e801';
+}
+
+/* '' */
+
+.icon-access_time:before {
+  content: '\e802';
+}
+
+/* '' */
+
+.icon-beach_access:before {
+  content: '\e803';
+}
+
+/* '' */
+
+.icon-child_care:before {
+  content: '\e804';
+}
+
+/* '' */
+
+.icon-directions_car:before {
+  content: '\e805';
+}
+
+/* '' */
+
+.icon-shopping_cart:before {
+  content: '\e806';
+}
+
+/* '' */
+
+.icon-child_friendly:before {
+  content: '\e807';
+}
+
+/* '' */
+
+.icon-pets:before {
+  content: '\e808';
+}
+
+/* '' */
+
+.icon-wc:before {
+  content: '\e809';
+}
+
+/* '' */
+
+.icon-local_parking:before {
+  content: '\e80a';
+}
+
+/* '' */
+
+.icon-lock_open:before {
+  content: '\e80b';
+}
+
+/* '' */
+
+.icon-menu:before {
+  content: '\e80c';
+}
+
+/* '' */
+
+.icon-close:before {
+  content: '\e80d';
+}
+
+/* '' */
+
+.icon-restaurant:before {
+  content: '\e80e';
+}
+
+/* '' */
+
+.icon-restaurant_menu:before {
+  content: '\e80f';
+}
+
+/* '' */
+
+.icon-local_convenience_store:before {
+  content: '\e810';
+}
+
+/* '' */
+
+.icon-phone:before {
+  content: '\e811';
+}
+
+/* '' */
+
+.icon-settings:before {
+  content: '\e812';
+}
+
+/* '' */
+
+.icon-wrench:before {
+  content: '\e813';
+}
+
+/* '' */
+
+.icon-road:before {
+  content: '\e814';
+}
+
+/* '' */
+
+.icon-map:before {
+  content: '\e815';
+}
+
+/* '' */
+
+.icon-local_gas_station:before {
+  content: '\e816';
+}
+
+/* '' */
+
+.icon-local_pizza:before {
+  content: '\e817';
+}
+
+/* '' */
+
+.icon-local_shipping:before {
+  content: '\e818';
+}
+
+/* '' */
+
+.icon-local_hospital:before {
+  content: '\e819';
+}
+
+/* '' */
+
+.icon-local_grocery_store:before {
+  content: '\e81a';
+}
+
+/* '' */
+
+.icon-local_cafe:before {
+  content: '\e81b';
+}
+
+/* '' */
+
+.icon-local_bar:before {
+  content: '\e81c';
+}
+
+/* '' */
+
+.icon-local_atm:before {
+  content: '\e81d';
+}
+
+/* '' */
+
+.icon-local_post_office:before {
+  content: '\e81e';
+}
+
+/* '' */
+
+.icon-local_printshop:before {
+  content: '\e81f';
+}
+
+/* '' */
+
+.icon-local_dining:before {
+  content: '\e820';
+}
+
+/* '' */
+
+.icon-local_hotel:before {
+  content: '\e821';
+}
+
+/* '' */
+
+.icon-local_mall:before {
+  content: '\e822';
+}
+
+/* '' */
+
+.icon-local_see:before {
+  content: '\e823';
+}
+
+/* '' */
+
+.icon-directions:before {
+  content: '\e824';
+}
+
+/* '' */
+
+.icon-store_mall_directory:before {
+  content: '\e825';
+}
+
+/* '' */
+
+.icon-arrow_downward:before {
+  content: '\e826';
+}
+
+/* '' */
+
+.icon-keyboard_arrow_left:before {
+  content: '\e827';
+}
+
+/* '' */
+
+.icon-keyboard_arrow_right:before {
+  content: '\e828';
+}
+
+/* '' */
+
+.icon-build:before {
+  content: '\e829';
+}
+
+/* '' */
+
+.icon-query_builder:before {
+  content: '\e82a';
+}
+
+/* '' */
+
+.icon-date_range:before {
+  content: '\e82b';
+}
+
+/* '' */
+
+.icon-star_border:before {
+  content: '\e82c';
+}
+
+/* '' */
+
+.icon-star:before {
+  content: '\e82d';
+}
+
+/* '' */
+
+.icon-star_half:before {
+  content: '\e82e';
+}
+
+/* '' */
+
+.icon-stars:before {
+  content: '\e82f';
+}
+
+/* '' */
+
+.icon-face:before {
+  content: '\e830';
+}
+
+/* '' */
+
+.icon-tag_faces:before {
+  content: '\e831';
+}
+
+/* '' */
+
+.icon-grade:before {
+  content: '\e832';
+}
+
+/* '' */
+
+.icon-ipiranga:before {
+  content: '\e833';
+}
+
+/* '' */
+
+.icon-wheel:before {
+  content: '\ebd5';
+}
+
+/* '' */
+
+.icon-food:before {
+  content: '\f0f5';
+}
+
+/* '' */
+
+.icon-direction:before {
+  content: '\f124';
+}
+
+/* '' */
 .ServicesItemFeaturesItem {
+  -webkit-align-items: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  color: #0d47a1;
   padding: 1em;
+}
+
+.ServicesItemFeaturesItem:hover {
+  background-color: #e0e0e0;
+}
+
+.ServicesItemFeaturesItem-icon {
+  padding: .375em;
+}
+
+.ServicesItemFeaturesItem-icon span {
+  font-size: 1.3125em;
 }
 .ServicesItemFeatures {
   display: -webkit-box;
@@ -1075,9 +1584,9 @@
 
 .ServicesItem-inner span {
   color: #ffffff;
-  font-size: 2.25em;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 @media (min-width: 48em) {
@@ -1119,7 +1628,7 @@
   margin: 0 auto;
   max-width: 72em;
   width: 100%;
-  padding: 2.25em 1em;
+  padding: 0 1em;
 }
 
 /* Status Item */

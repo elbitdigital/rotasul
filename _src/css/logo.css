@@ -2,14 +2,17 @@
 /* Logo */
 
 .Logo {
-	height: 6em;
+	height: 3.75em;
+}
+
+.Logo--footer {
+	margin-bottom: 1em;
 }
 
 /* Logo svg */
 
 .Logo svg {
 	height: 100%;
-	width: 100%;
 	display: block;
 }
 
@@ -30,6 +33,16 @@
 	height: 100%;
 }
 
+.Logo--footer .Logo-inner {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
 /* Logo svg */
 
 /*.Logo--footer svg * {*/
@@ -41,17 +54,29 @@
 	/*transition: fill .3s;*/
 /*}*/
 
+.Logo svg,
+.Logo svg * {
+	-webkit-transition: background .3s;
+	-moz-transition: background .3s;
+	-ms-transition: background .3s;
+	-o-transition: background .3s;
+	transition: background .3s;
+}
+
 .Logo--header #RotasulLogoRota {
-	fill: #303f9f; /* indigo 700 */
+	fill: #2196f3; /* indigo 700 */
 }
 
 .Logo--header #RotasulLogoSul {
 	fill: #ffb300; /* amber 600 */
 }
 
-.is-night .Logo--header #RotasulLogoRota,
+.is-night .Logo--header #RotasulLogoRota {
+	fill: #03a9f4; /* light blue 500 */
+}
+
 .is-night .Logo--header #RotasulLogoSul {
-	fill: #ffffff;
+	fill: #ffca28; /* amber 400 */
 }
 
 .Logo--footer #RotasulLogoRota path {
@@ -60,4 +85,18 @@
 
 .Logo--footer #RotasulLogoSul path {
 	fill: #ffb300; /* amber 600 */
+}
+
+@media (min-width: 60em) {
+
+	/* Logo */
+
+	.Logo {
+		height: 6em;
+	}
+
+	.Logo--footer {
+		height: 4.5em;
+	}
+
 }

@@ -1,0 +1,14 @@
+
+.Brand {
+
+}
+
+.Brand--footer {
+	margin-bottom: 1em;
+}
+
+.Brand--footer .Brand-text p {
+	font-size: .75em;
+	font-weight: 500;
+	text-transform: uppercase;
+}

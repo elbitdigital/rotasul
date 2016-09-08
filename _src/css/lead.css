@@ -4,6 +4,7 @@
 .Lead {
 	position: relative;
 	width: 100%;
+	margin-bottom: 2.25em;
 }
 
 /* Lead background */
@@ -43,6 +44,19 @@
 		align-items: flex-start;
 		-webkit-flex-flow: row;
 		flex-flow: row;
+	}
+
+}
+
+@media (min-width: 60em) {
+
+	.Lead {
+		margin-bottom: 3em;
+	}
+
+	.Lead-headline,
+	.Lead-location {
+		flex: 1;
 	}
 
 }

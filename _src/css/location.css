@@ -2,43 +2,34 @@
 /* Location */
 
 .Location {
-	border: solid 1px black;
-	display: inline-block;
+	display: none;
 	position: relative;
 	width: 100%;
-	margin: 1.5em 1em 1em;
-}
-
-.Location:after {
-	content: '';
-	display: block;
-	margin-top: 75%;
 }
 
 /* Location map */
 
 .Location-map {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	width: 100%;
 }
 
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
 
 	/* Location */
 
 	.Location {
-		width: 45%;
-		max-width: 45%;
-		margin: 6em 1em 1em;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		width: auto;
+		/*padding-top: 12em;*/
 	}
 
-	.Location:after {
-		margin-top: 65%;
+	.Location-map {
+		height: 24em;
 	}
 
 }
