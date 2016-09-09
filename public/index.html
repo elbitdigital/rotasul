@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="pt-br">
 <meta charset="UTF-8">
-<title></title>
+<title>Rota Sul | Restaurante, Lanchonete e Posto Ipiranga na Rodovia Raposo Tavares - Aberto 24h</title>
+<meta name="theme-color" content="#212121" id="theme-color">
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script>
+	(function(d) {
+		var config = {
+					kitId: 'imu7chg',
+					scriptTimeout: 3000,
+					async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
+<link rel="stylesheet" href="dist/css/rotasul.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
@@ -14,22 +26,549 @@
 <script src="dist/js/classList.min.js"></script>
 <![endif]-->
 
-<body>
+<style>
 
-<div class="Brand"></div>
+</style>
 
-<div class="Status"></div>
+<body class="tk-filson-soft">
 
-<div class="Services">
+<script>
 
-	<div class="Services-list">
+	function initMap() {
+		// Create a map object and specify the DOM element for display.
+		var map = new google.maps.Map(document.getElementById('location-map'), {
+			center: {
+				lat: -22.74180,
+				lng: -50.19831
+			},
+			scrollwheel: false,
+			zoom: 12,
+			zoomControl: true,
+			mapTypeControl: false,
+			scaleControl: false,
+			streetViewControl: true,
+			rotateControl: false
+		});
+	}
 
-		<div class="ServicesItem">Restaurante</div>
-		<div class="ServicesItem">Posto</div>
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTERWJb2fcG92T9EHtA7z2slLsSx8QOXs&callback=initMap" async defer></script>
+
+<aside class="Aside">
+
+	<header class="Header">
+
+		<div class="Header-inner container">
+
+			<!--<div class="Social Header-social"></div>-->
+
+			<div class="Brand Header-brand">
+
+				<div class="Logo Logo--header">
+
+					<div id="logo" class="Logo-inner"></div>
+
+				</div>
+
+			</div>
+
+			<div class="Status Header-status">
+
+				<div class="Status-inner">
+
+					<div class="StatusItem StatusItem--blue">
+
+						<span class="no-transform">Aberto 24h</span>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</header>
+
+</aside>
+
+<section id="principal" class="Lead">
+
+	<div class="Lead-background"></div>
+
+	<div class="Lead-inner container">
+
+		<div class="Headline Lead-headline">
+
+			<div class="Headline-title font-amber-700">
+
+				<h2>Sempre pensando<br> em <strong>você</strong>!</h2>
+
+			</div>
+
+			<div class="Headline-subtitle font-grey-500">
+
+				<p><strong>Restaurante, Lanchonete e Posto Ipiranga, <span class="">tudo 24h</span></strong>, na Rodovia Raposo Tavares, Km 420</p>
+				<p>Palmital - SP</p>
+				<a href="https://www.google.com/maps?daddr=Rua+Doutor+Geraldo+Coelho,+162,+Palmital+-+SP,+19970-000" target="_blank" class="NavItem-select-area">como chegar</a>
+
+			</div>
+
+			<!-- Informações - endereço -->
+
+		</div>
+
+		<div class="Location Lead-location">
+
+			<div id="location-map" class="Location-map"></div>
+
+		</div>
+
+	</div>
+
+</section>
+
+<main class="Main">
+
+	<div class="Services">
+
+		<div class="Services-inner">
+
+			<div class="ServicesItem ServicesItem--posto">
+
+				<header class="ServicesItem-header">
+
+					<div class="ServicesItem-background grey-100">
+
+						<div class="ServicesItem-overlay"></div>
+
+					</div>
+
+					<div class="ServicesItem-inner">
+
+						<span>Posto <br/>Ipiranga</span>
+
+					</div>
+
+				</header>
+
+				<div class="ServiceItemFeatures">
+
+					<ul class="ServiceItemFeatures-list">
+
+						<li class="ServicesItemFeaturesItem yellow">
+
+							<!-- destaque + icone da ipiranga -->
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-ipiranga"></span>
+							</div>
+
+							<span>Produtos Ipiranga</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<!-- icone de loja (store) -->
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-local_convenience_store"></span>
+							</div>
+
+							<span>Conveniencia Autmotiva</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<!-- icone de óleo -->
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-build"></span>
+							</div>
+
+							<span>Troca de Óleo</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<!-- icone de pneu -->
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-wheel"></span>
+							</div>
+
+							<span>Borracharia</span>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="ServicesItem ServicesItem--restaurante">
+
+				<header class="ServicesItem-header">
+
+					<div class="ServicesItem-background grey-300">
+
+						<div class="ServicesItem-overlay"></div>
+
+					</div>
+
+					<div class="ServicesItem-inner">
+
+						<span>Restaurante e Lanchonete</span>
+
+					</div>
+
+				</header>
+
+				<div class="ServiceItemFeatures">
+
+					<ul class="ServiceItemFeatures-list">
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-local_convenience_store"></span>
+							</div>
+
+							<span>Convêniencia</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-child_friendly"></span>
+							</div>
+
+							<span>Fraldário</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-pets"></span>
+							</div>
+
+							<span>Canil</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-wc"></span>
+							</div>
+
+							<span>Banheiro</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-wifi"></span>
+							</div>
+
+							<span>WiFi</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-local_parking"></span>
+							</div>
+
+							<span>Estacionamento Grátis</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-food"></span>
+							</div>
+
+							<span>À la carte</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-food"></span>
+							</div>
+
+							<span>Self Service</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-food"></span>
+							</div>
+
+							<span>Rodizio</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-access_time"></span>
+							</div>
+
+							<span>24h</span>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</main>
+
+<div class="Gallery-wrapper">
+
+	<div id="gallery" class="Gallery">
+
+		<div class="Gallery-background"></div>
+
+		<div class="Gallery-inner">
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/banheiro.jpg" alt="Banheiro"/>
+
+				</figure>
+
+			</div>
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/canil.jpg" alt="Canil"/>
+
+				</figure>
+
+			</div>
+
+			<div class="GalleryItem">
+
+				<div class="GalleryItem-background">
+
+					<div class="GalleryItem-image"></div>
+
+					<div class="GalleryItem-overlay"></div>
+
+				</div>
+
+				<figure class="GalleryItem-figure">
+
+					<img src="dist/img/buffet%20salada.jpg" alt="Buffet Salada"/>
+
+				</figure>
+
+			</div>
+
+		</div>
+
+		<div class="GalleryNavigation Gallery-navigation">
+
+			<div class="GalleryNavigation-side-controls"></div>
+
+			<div class="GalleryNavigation-footer">
+
+				<div class="GalleryNavigation-footer-controls"></div>
+
+			</div>
+
+		</div>
 
 	</div>
 
 </div>
+
+<section id="contato" class="Contact">
+
+	<div class="Contact-background"></div>
+
+	<div class="Contact-inner container">
+
+		<header class="Contact-header">
+
+			<h2>Contato</h2>
+			<p>Entre em contato conosco!</p>
+
+		</header>
+
+		<form id="cForm" class="ContactForm">
+
+			<div class="ContactFormField">
+
+				<label for="cName">NOME</label>
+				<input id="cName" type="text" autocomplete="off" class="ContactFormField-input" placeholder="NOME"/>
+
+			</div>
+
+			<div class="ContactFormField">
+
+				<label for="cEmail">EMAIL</label>
+				<input id="cEmail" type="email" autocomplete="off" class="ContactFormField-input" placeholder="EMAIL"/>
+
+			</div>
+
+			<div class="ContactFormField">
+
+				<label for="cMessage">MENSAGEM</label>
+				<textarea id="cMessage" class="ContactFormField-input ContactFormField--message" placeholder="MENSAGEM"></textarea>
+
+			</div>
+
+			<div class="ContactFormStatus">
+
+							<span class="ContactFormStatus-text ContactFormStatus-text--sending font-light-blue-a700">
+								Enviando...
+							</span>
+
+							<span class="ContactFormStatus-text ContactFormStatus-text--success font-light-green-a700">
+								Enviado com sucesso!
+							</span>
+
+							<span class="ContactFormStatus-text ContactFormStatus-text--error font-red-a700">
+								Não foi possível enviar, verifique os campos e tente novamente.
+							</span>
+
+							<span class="ContactFormStatus-text ContactFormStatus-text--fail font-red-a700">
+								Houve algum problema, tentando novamente...
+							</span>
+
+			</div>
+
+			<div class="ContactFormButton">
+
+				<button id="cSubmit" type="submit" value="Enviar" class="Button ContactFormField-button">
+
+					<span>Enviar</span>
+
+				</button>
+
+			</div>
+
+		</form>
+
+	</div>
+
+</section>
+
+<footer id="rodape" class="Footer">
+
+	<div class="Footer-background"></div>
+
+	<div class="Footer-inner container">
+
+		<div class="Brand Brand--footer Footer-brand">
+
+			<div class="Logo Logo--footer Footer-logo">
+
+				<!--<div class="Logo-select-area">-->
+
+				<div id="footer-logo" class="Logo-inner"></div>
+
+				<!--</div>-->
+
+			</div>
+
+			<div class="Brand-text font-grey-600">
+
+				<p class="soft-break">Sempre pensando<br> em <strong>você</strong></p>
+
+				<p>SP 270, KM 420</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</footer>
+
+<script>
+
+	function isNight() {
+
+		document.getElementById('theme-color').content = '#212121';
+		document.body.classList.add('is-night');
+
+	}
+
+	function isNotNight() {
+
+		document.getElementById('theme-color').content = '#2196f3';
+		document.body.classList.remove('is-night');
+
+	}
+
+	function setDayPeriod() {
+
+		var hr = (new Date()).getHours(); //get hours of the day in 24Hr format (0-23)
+
+		if (hr < 6 || hr > 18)
+			isNight();
+		else
+			isNotNight();
+
+	}
+
+	setDayPeriod();
+	setInterval(setDayPeriod, 1000);
+
+</script>
+
+<script src="dist/js/rotasul.js"></script>
+
+<script>
+
+	var logo = new Logo(document.getElementById('logo'), 'dist/svg/RotasulLogo.svg', function () {
+
+		logo.cloneTo(document.getElementById('footer-logo'));
+
+	});
+
+	var gallery = new Gallery(document.getElementById('gallery'));
+
+</script>
 
 </body>
 
