@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'rotasul';
-  src: url('../font/rotasul.eot?13184489');
-  src: url('../font/rotasul.eot?13184489#iefix') format('embedded-opentype'),
-       url('../font/rotasul.woff2?13184489') format('woff2'),
-       url('../font/rotasul.woff?13184489') format('woff'),
-       url('../font/rotasul.ttf?13184489') format('truetype'),
-       url('../font/rotasul.svg?13184489#rotasul') format('svg');
+  src: url('../font/rotasul.eot?85404484');
+  src: url('../font/rotasul.eot?85404484#iefix') format('embedded-opentype'),
+       url('../font/rotasul.woff2?85404484') format('woff2'),
+       url('../font/rotasul.woff?85404484') format('woff'),
+       url('../font/rotasul.ttf?85404484') format('truetype'),
+       url('../font/rotasul.svg?85404484#rotasul') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,11 +15,11 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'rotasul';
-    src: url('../font/rotasul.svg?13184489#rotasul') format('svg');
+    src: url('../font/rotasul.svg?85404484#rotasul') format('svg');
   }
 }
 */
-
+ 
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "rotasul";
   font-style: normal;
@@ -55,7 +55,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-wifi:before { content: '\e800'; } /* '' */
+.icon-wifi:before { content: '\e800'; } /* '' *//* '' */
 .icon-accessible:before { content: '\e801'; } /* '' */
 .icon-access_time:before { content: '\e802'; } /* '' */
 .icon-beach_access:before { content: '\e803'; } /* '' */
@@ -110,3 +110,4 @@
 .icon-wheel:before { content: '\ebd5'; } /* '' */
 .icon-food:before { content: '\f0f5'; } /* '' */
 .icon-direction:before { content: '\f124'; } /* '' */
+.icon-tripadvisor:before { content: '\f262'; } /* '' */

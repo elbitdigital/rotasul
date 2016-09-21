@@ -1,6 +1,12 @@
 
 .Brand {
-
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 }
 
 .Brand--footer {
@@ -11,4 +17,22 @@
 	font-size: .75em;
 	font-weight: 500;
 	text-transform: uppercase;
+}
+
+.Brand-social {
+	margin-left: 1em;
+}
+
+.Brand-social .icon {
+	color: #bdbdbd;
+	font-size: 1.5em;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	-ms-transition: all .4s;
+	-o-transition: all .4s;
+	transition: all .4s;
+}
+
+.Brand-social:hover .icon {
+	color: #689f38;
 }
