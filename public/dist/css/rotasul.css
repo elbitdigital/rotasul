@@ -49,6 +49,11 @@ body.is-night {
 }
 
 .Brand--footer {
+  -webkit-flex-flow: column;
+  flex-flow: column;
+}
+
+.Brand--footer {
   margin-bottom: 1em;
 }
 
@@ -59,7 +64,7 @@ body.is-night {
 }
 
 .Brand-social {
-  margin-left: 1em;
+  margin-left: .375em;
 }
 
 .Brand-social .icon {
@@ -74,6 +79,18 @@ body.is-night {
 
 .Brand-social:hover .icon {
   color: #689f38;
+}
+
+@media (min-width: 21em) {
+  .Brand-social {
+    margin-left: .75em;
+  }
+}
+
+@media (min-width: 21em) {
+  .Brand-social {
+    margin-left: 1em;
+  }
 }
 /* Contact Form Field */
 

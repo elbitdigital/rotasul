@@ -112,7 +112,7 @@
 
 				<p><strong>Restaurante, Lanchonete e Posto Ipiranga, <span class="">tudo 24h</span></strong>, na Rodovia Raposo Tavares, Km 420</p>
 				<p>Palmital - SP</p>
-				<a href="https://www.google.com/maps?daddr=Rua+Doutor+Geraldo+Coelho,+162,+Palmital+-+SP,+19970-000" target="_blank" class="NavItem-select-area">como chegar</a>
+				<a href="https://www.google.com/maps?daddr=Posto+Rotasul,+Palmital+-+SP,+19970-000" target="_blank" class="NavItem-select-area">como chegar</a>
 
 			</div>
 
@@ -199,6 +199,17 @@
 							</div>
 
 							<span>Borracharia</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<!-- icone de pneu -->
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-wheel"></span>
+							</div>
+
+							<span>Troca de Cartas Frete Credenciadas</span>
 
 						</li>
 
@@ -296,16 +307,6 @@
 								<span class="icon icon-food"></span>
 							</div>
 
-							<span>À la carte</span>
-
-						</li>
-
-						<li class="ServicesItemFeaturesItem">
-
-							<div class="ServicesItemFeaturesItem-icon">
-								<span class="icon icon-food"></span>
-							</div>
-
 							<span>Self Service</span>
 
 						</li>
@@ -317,6 +318,16 @@
 							</div>
 
 							<span>Rodizio</span>
+
+						</li>
+
+						<li class="ServicesItemFeaturesItem">
+
+							<div class="ServicesItemFeaturesItem-icon">
+								<span class="icon icon-food"></span>
+							</div>
+
+							<span>Lago Ornamental de Carpas</span>
 
 						</li>
 
@@ -546,7 +557,9 @@
 
 		var hr = (new Date()).getHours(); //get hours of the day in 24Hr format (0-23)
 
-		if (hr < 6 || hr > 18)
+		console.log(hr);
+
+		if (hr < 6 || hr > 17)
 			isNight();
 		else
 			isNotNight();
