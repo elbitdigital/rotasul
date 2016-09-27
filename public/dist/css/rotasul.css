@@ -26,6 +26,16 @@ body.is-night {
   white-space: pre-line;
 }
 
+.sm-hidden {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .sm-hidden {
+    display: inline-block;
+  }
+}
+
 @media (min-width: 60em) {
   .container {
     max-width: 60em;
@@ -77,8 +87,12 @@ body.is-night {
   transition: all .4s;
 }
 
-.Brand-social:hover .icon {
+.Brand-social:hover.Brand--tripadvisor .icon {
   color: #689f38;
+}
+
+.Brand-social:hover.Brand--facebook .icon {
+  color: #3b5998;
 }
 
 @media (min-width: 21em) {
@@ -92,13 +106,95 @@ body.is-night {
     margin-left: 1em;
   }
 }
+/* Check */
+
+.Check {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  /*font-size: 18px;*/
+  /*background-color: #cecece;*/
+  /*max-width: 50%;*/
+}
+
+/* Check input */
+
+.Check input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Check indicator (input display [square or circle]) */
+
+.Check-indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #bdbdbd;
+}
+
+/* Check indicator for radio input */
+
+.Check--radio .Check-indicator {
+  border-radius: 50%;
+}
+
+/* Check indicator hover / focus */
+
+.Check:hover input ~ .Check-indicator,
+.Check input:focus ~ .Check-indicator {
+  background: #ccc;
+}
+
+/* Checked input */
+
+.Check input:checked ~ .Check-indicator {
+  background: #ffa000;
+}
+
+/* Checked input and focused */
+
+.Check:hover input:not([disabled]):checked ~ .Check-indicator,
+.Check input:checked:focus ~ .Check-indicator {
+  background: #ff8f00;
+}
+
+/* Check indicator after */
+
+.Check-indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Check input checked indicator */
+
+.Check input:checked ~ .Check-indicator:after {
+  display: block;
+}
+
+/* Check radio input checked indicator */
+
+.Check--radio .Check-indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
 /* Contact Form Field */
 
 .ContactFormField {
   border: solid 1px black;
   border-radius: 3px;
+  display: block;
   margin-bottom: 1.5em;
-  max-width: 24em;
   overflow: hidden;
   padding: 1.5em 1em 1.5em;
   position: relative;
@@ -111,16 +207,38 @@ body.is-night {
   width: 100%;
 }
 
-.ContactFormField--double {
+.ContactForm-row .ContactFormField {
+  min-width: 100%;
+  margin-right: 1em;
+  flex: 1;
+}
+
+.ContactForm-row .ContactFormField:last-of-type {
+  margin-right: 0;
+  flex: 1;
+}
+
+.ContactFormField--multiple {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column-reverse;
-  flex-flow: column-reverse;
-  max-width: 24em;
+  -webkit-flex-flow: column;
+  flex-flow: column;
   position: relative;
+  width: 100%;
+}
+
+.ContactFormField--receiver {
+  display: block;
+  border: solid 1px black;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  padding: 1.5em 1em 1.5em;
+  position: relative;
+  text-align: left;
   width: 100%;
 }
 
@@ -157,8 +275,31 @@ body.is-night {
   -o-transform: translateY(-100%);
   transform: translateY(-100%);
   padding-top: .75em;
+  pointer-events: none;
   top: 0;
   width: 100%;
+}
+
+/* VALIDATION STYLES */
+
+.ContactFormField.is-required::after {
+  color: #0069ff;
+  content: '*';
+  display: block;
+  font-size: 25px;
+  width: 25px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  z-index: 1;
+}
+
+.ContactFormField.is-empty::after {
+  color: #d50000;
+}
+
+.ContactFormField.is-valid::after {
+  display: none;
 }
 
 /* Contact Form Field focused style */
@@ -191,12 +332,32 @@ body.is-night {
 /* Contact Form Field empty style */
 
 .ContactFormField.is-empty {
-  background-color: #ffebee;
-  /*red-50*/
   border-color: #d50000;
 }
 
+/* Webkit fallback (hide placeholder on input focus) */
+
+.ContactFormField:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
 /* Contact Form Field empty input/textarea style */
+
+.ContactFormField.is-empty:-moz-placeholder {
+  color: rgba(213,0,0,0.5);
+}
+
+/* ff 18- */
+
+.ContactFormField.is-empty:-ms-input-placeholder {
+  color: rgba(213,0,0,0.5);
+}
+
+.ContactFormField.is-empty::-webkit-input-placeholder {
+  color: rgba(213,0,0,0.5);
+}
+
+/* Contact Form Field empty input/textarea style (general) */
 
 .ContactFormField.is-empty input,
 .ContactFormField.is-empty textarea {
@@ -208,23 +369,35 @@ body.is-night {
   /* Contact Form Field */
 
   .ContactFormField {
-    max-width: 33em;
+    max-width: 100%;
   }
 
-  /* Contact Form Field double */
+  /* Contact Form Field inside row */
 
-  .ContactFormField--double {
+  .ContactForm-row .ContactFormField {
+    min-width: 0;
+    margin-right: 1em;
+    flex: 1;
+  }
+
+  /* Contact Form Field multiple */
+
+  .ContactFormField--multiple {
+    align-content: center;
     -webkit-flex-flow: row;
     flex-flow: row;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-    max-width: 33em;
   }
 
-  /* Contact Form Field split */
+  /* Contatc Form Field options */
 
-  .ContactFormField--split {
-    max-width: 16em;
+  .ContactFormField-options {
+    align-content: center;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
   }
 }
 /* Contact Form Status */
@@ -357,6 +530,27 @@ body.is-night {
 .ContactForm textarea {
   overflow: auto;
   resize: none;
+}
+
+/* Contact Form row */
+
+.ContactForm-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  /* Contact Form */
+
+  .ContactForm {
+    max-width: 33em;
+  }
 }
 /* Contact */
 
@@ -1101,12 +1295,12 @@ body.is-night {
 }
 @font-face {
   font-family: 'rotasul';
-  src: url("../font/rotasul.eot?85404484");
-  src: url("../font/rotasul.eot?85404484#iefix") format('embedded-opentype'),
-       url("../font/rotasul.woff2?85404484") format('woff2'),
-       url("../font/rotasul.woff?85404484") format('woff'),
-       url("../font/rotasul.ttf?85404484") format('truetype'),
-       url("../font/rotasul.svg?85404484#rotasul") format('svg');
+  src: url("../font/rotasul.eot?6117408");
+  src: url("../font/rotasul.eot?6117408#iefix") format('embedded-opentype'),
+       url("../font/rotasul.woff2?6117408") format('woff2'),
+       url("../font/rotasul.woff?6117408") format('woff'),
+       url("../font/rotasul.ttf?6117408") format('truetype'),
+       url("../font/rotasul.svg?6117408#rotasul") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1119,7 +1313,7 @@ body.is-night {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'rotasul';
-    src: url('../font/rotasul.svg?85404484#rotasul') format('svg');
+    src: url('../font/rotasul.svg?6117408#rotasul') format('svg');
   }
 }
 */
@@ -1158,8 +1352,6 @@ body.is-night {
 }
 
 /* '' */
-
-/* '' */
 
 .icon-accessible:before {
   content: '\e801';
@@ -1467,11 +1659,41 @@ body.is-night {
 
 /* '' */
 
+.icon-camera:before {
+  content: '\e834';
+}
+
+/* '' */
+
+.icon-credit-card:before {
+  content: '\e835';
+}
+
+/* '' */
+
 .icon-wheel:before {
   content: '\ebd5';
 }
 
 /* '' */
+
+.icon-twitter:before {
+  content: '\f099';
+}
+
+/* '' */
+
+.icon-facebook:before {
+  content: '\f09a';
+}
+
+/* '' */
+
+.icon-gplus:before {
+  content: '\f0d5';
+}
+
+/* '' */
 
 .icon-food:before {
   content: '\f0f5';
@@ -1484,6 +1706,36 @@ body.is-night {
 }
 
 /* '' */
+
+.icon-foursquare:before {
+  content: '\f180';
+}
+
+/* '' */
+
+.icon-google:before {
+  content: '\f1a0';
+}
+
+/* '' */
+
+.icon-cc-visa:before {
+  content: '\f1f0';
+}
+
+/* '' */
+
+.icon-cc-mastercard:before {
+  content: '\f1f1';
+}
+
+/* '' */
+
+.icon-cc-amex:before {
+  content: '\f1f3';
+}
+
+/* '' */
 
 .icon-tripadvisor:before {
   content: '\f262';

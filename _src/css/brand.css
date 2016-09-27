@@ -38,8 +38,12 @@
 	transition: all .4s;
 }
 
-.Brand-social:hover .icon {
+.Brand-social:hover.Brand--tripadvisor .icon {
 	color: #689f38;
+}
+
+.Brand-social:hover.Brand--facebook .icon {
+	color: #3b5998;
 }
 
 @media (min-width: 21em) {

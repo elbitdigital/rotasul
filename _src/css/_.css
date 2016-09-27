@@ -26,6 +26,18 @@ body.is-night {
 	white-space: pre-line;
 }
 
+.sm-hidden {
+	display: none;
+}
+
+@media (min-width: 48em) {
+
+	.sm-hidden {
+		display: inline-block;
+	}
+
+}
+
 @media (min-width: 60em) {
 
 	.container {

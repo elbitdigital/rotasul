@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	imageResize = require('gulp-image-resize'),
 	tinypng = require('gulp-tinypng'),
-	gulpFancyMeta = require('gulp-fancy-meta'),
+
 	browserSync = require('browser-sync').create();
 
 /*
@@ -168,9 +168,3 @@ gulp.task('serve', function () {
 });
 
 gulp.task('default', ['serve', 'css-watch', 'js-watch']);
-
-gulp.task('fancyMeta', function() {
-	return gulp.src('fancy.html')
-		.pipe(gulpFancyMeta())
-		.pipe(gulp.dest(''));
-});
