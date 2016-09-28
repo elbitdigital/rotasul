@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="">
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script src="dist/js/villa.min.js"></script>
+<link rel="stylesheet" href="dist/css/villa.min.css"/>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
+<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
+<script src="dist/js/html5shiv.js"></script>
+<script src="dist/js/html5shiv-printshiv.js"></script>
+<script src="dist/js/classList.min.js"></script>
+<![endif]-->
+
+<body>
+
+<form action=".." class="Form">
+
+      <div class="FormField"></div>
+
+      <div class="Form-row">
+
+            <div class="FormField FormField--checkbox" data-field-group="receiver">
+
+                  <label for=""></label>
+                  <input type="checkbox"/>
+
+            </div>
+
+            <div class="FormField FormField--checkbox" data-field-group="receiver">
+
+                  <label for=""></label>
+                  <input type="checkbox"/>
+
+            </div>
+
+      </div>
+
+      <div class="FormField"></div>
+
+</form>
+
+<script>
+
+
+      /* Form */
+
+      var Form = (function () {
+
+            /**
+             * Form constructor
+             * @constructor
+             */
+            function Form(element) {
+
+                  var self = this;
+
+                  this.element = element;
+
+                  this.fieldGroups = [
+                        {
+                              name: 'contact',
+                              fields: [
+                                      ''
+                              ]
+                        },
+                        'receiver'
+                  ];
+
+                  this.fields = [
+                          'campo',
+                          'campo'
+                  ];
+
+                  this.valid = function () {
+
+                        // passar pelos fields
+                        // passar pelos fieldGroups
+
+                  };
+
+                  if (this.element)
+                        this.init();
+
+                  console.log(this.constructor.name);
+
+                  var funcNameRegex = /function (.{1,})\(/;
+                  var results = (funcNameRegex).exec((this).constructor.toString());
+                  console.log((results && results.length > 1) ? results[1] : "");
+
+            }
+
+            Form.prototype.update = function () {
+
+                  this.getFields();
+
+            };
+
+            Form.prototype.getFields = function() {
+
+                  var fields = this.element.querySelectorAll('fields');
+
+                  this.fields = [];
+
+                  for (var i = fields.length; i--; ) {
+
+                        var formField = new FormField(fields[i]);
+
+                        if (formField.fieldGroup)
+                              this.fieldGroups.push(formField.fieldGroup);
+
+                        this.fields.push(formField);
+
+                  }
+
+
+            };
+
+            Form.prototype.init = function () {
+
+            };
+
+            return Form;
+
+      })();
+
+</script>
+
+<script>
+
+      /* FormField */
+
+      var FormField = (function () {
+
+            /**
+             * FormField constructor
+             * @constructor
+             */
+            function FormField(element) {
+
+                  var self = this;
+
+                  this.element = element;
+
+                  this.onCheckboxChange = function () {
+
+                        // fazer algum teste pra ver se o input está com 'check' ou não
+                        if (true)
+                              self.element.classList.add('is-checked');
+                        else
+                              self.element.classList.remove('is-checked');
+
+                  };
+
+                  this.onFocus = function () {
+
+                        self.element.classList.remove('is-blur');
+                        self.element.classList.add('is-focus');
+
+                  };
+
+                  this.onBlur = function () {
+
+                        self.element.classList.remove('is-focus');
+                        self.element.classList.add('is-blur');
+
+                  };
+
+                  if (this.element)
+                        this.init();
+
+            }
+
+            FormField.prototype.isValid = function () {
+
+                  return true;
+
+            };
+
+            FormField.prototype.normalizeCheckbox = function () {
+
+                  if (this.element.input.type == 'checkbox') {
+
+                        this.element.classList.add('FormField--checkbox');
+
+                        try {
+
+                              this.element.input.addEventListener('change', function () {
+
+
+                              })
+
+                        } catch (e) {
+
+                              this.element.input.addEventListener('onchange', function () {
+
+
+                              })
+
+                        }
+
+                  }
+
+            };
+
+            FormField.prototype.normalizeText = function (action) {
+
+                  this.element.classList.toggle(action);
+
+            };
+
+            FormField.prototype.init = function () {
+
+                  this.element.input = this.element.querySelector('input');
+                  this.element.label = this.element.querySelector('label');
+
+                  this.fieldGroup = this.element.dataset.fieldGroup;
+
+                  switch (this.element.input.type) {
+                        case 'checkbox':
+                              this.normalizeCheckbox();
+                              break;
+                        case 'radio':
+                              this.normalizeRadio();
+                              break;
+                        default: this.normalizeText();
+                  }
+
+            };
+
+            return FormField;
+
+      })();
+
+</script>
+
+<script>
+
+      /* FormFieldGroup */
+
+      var FormFieldGroup = (function () {
+
+            /**
+            * FormFieldGroup constructor
+            * @constructor
+            */
+            function FormFieldGroup(name, fields) {
+
+                  this.name = name;
+                  this.fields = fields || [];
+
+            }
+
+            FormFieldGroup.isValid = function () {
+
+
+
+            };
+
+            FormFieldGroup.prototype.pushField = function (field) {
+
+                  this.fields.push(field);
+
+            };
+
+            return FormFieldGroup;
+
+      })();
+
+</script>
+
+<script>
+
+      var form = new Form();
+
+</script>
+
+</html>

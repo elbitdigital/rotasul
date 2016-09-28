@@ -2,6 +2,7 @@
 /* Footer */
 
 .Footer {
+	padding: 3em 0;
 	position: relative;
 	width: 100%;
 }
@@ -16,22 +17,120 @@
 	width: 100%;
 }
 
+/* Footer brand */
+
+.Footer-brand {
+	text-align: center;
+}
+
 /* Footer inner */
 
 .Footer-inner {
-	-webkit-align-items: center;
-	align-items: center;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-justify-content: center;
-	justify-content: center;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
 	position: relative;
 	width: 100%;
 }
 
-.Footer-brand .Brand-text {
-	text-align: center;
+.Footer-inner.container {
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.Footer-section {
+	width: 100%;
+}
+
+.Footer dl {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.Footer dd,
+.Footer dt,
+.Footer p {
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+.Footer dt {
+	font-weight: 500;
+}
+
+.Footer dd,
+.Footer dt {
+	margin-bottom: .5em;
+	width: 100%;
+}
+
+.Footer h2 {
+	margin-bottom: .75em;
+}
+
+.Footer p {
+	margin-bottom: 1em;
+}
+
+@media (min-width: 48em) {
+
+	.Footer dd,
+	.Footer dt,
+	.Footer p {
+		font-size: 1.125em;
+	}
+
+	.Footer dt {
+		width: 20%;
+	}
+
+	.Footer dd {
+		width: 80%;
+	}
+
+	.Footer-inner.container {
+		padding: 0 1.5em;
+	}
+
+}
+
+@media (min-width: 60em) {
+
+	.Footer-inner.container {
+		padding: 0 3em;
+	}
+
+	.Footer-section {
+		max-width: 50%;
+		padding: 1em 1em 1em 3em;
+	}
+
+}
+
+@media (min-width: 72em) {
+
+	.Footer-inner.container {
+		max-width: 60em;
+		padding: 0 3.75em;
+	}
+
+}
+
+@media (min-width: 72em) {
+
+	.Footer-inner.container {
+		max-width: 96em;
+		padding: 0 4.5em;
+	}
+
 }

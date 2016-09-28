@@ -10,12 +10,12 @@
 }
 
 .Brand--footer {
+	-webkit-align-items: center;
+	align-items: center;
 	-webkit-flex-flow: column;
 	flex-flow: column;
-}
-
-.Brand--footer {
-	margin-bottom: 1em;
+	margin: 1em 0;
+	width: 100%;
 }
 
 .Brand--footer .Brand-text p {

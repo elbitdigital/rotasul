@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="">
 <meta charset="UTF-8">
-<title>Rodapé</title>
+<title></title>
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script>
+	(function(d) {
+		var config = {
+					kitId: 'imu7chg',
+					scriptTimeout: 3000,
+					async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
-<link rel="stylesheet" href="dist/css/rotasul.min.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
@@ -15,62 +24,165 @@
 <script src="dist/js/classList.min.js"></script>
 <![endif]-->
 
+<style>
+
+	.Footer {
+		position: relative;
+		width: 100%;
+	}
+
+	.Footer-inner {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		position: relative;
+	}
+
+	.Footer-inner.container {
+		margin: 0 auto;
+		padding: 0 1em;
+		width: 100%;
+	}
+
+	.Footer-section {
+		width: 100%;
+	}
+
+	.Footer dl {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
+
+	.Footer dd,
+	.Footer dt,
+	.Footer p {
+		font-size: 1em;
+		font-weight: 300;
+		line-height: 1.6;
+	}
+
+	.Footer dt {
+		font-weight: 500;
+	}
+
+	.Footer dd,
+	.Footer dt {
+		margin-bottom: .5em;
+		width: 100%;
+	}
+
+	.Footer h2 {
+		margin-bottom: .75em;
+	}
+
+	.Footer p {
+		margin-bottom: 1em;
+	}
+
+	@media (min-width: 48em) {
+
+		.Footer dd,
+		.Footer dt,
+		.Footer p {
+			font-size: 1.125em;
+			font-weight: 300;
+			line-height: 1.6;
+		}
+
+		.Footer dt {
+			width: 20%;
+		}
+
+		.Footer dd {
+			width: 80%;
+		}
+
+		.Footer-inner.container {
+			padding: 0 1.5em;
+		}
+
+	}
+
+	@media (min-width: 60em) {
+
+		.Footer-inner.container {
+			padding: 0 3em;
+		}
+
+		.Footer-section {
+			max-width: 50%;
+			padding: 1em 1em 1em 3em;
+		}
+
+	}
+
+	@media (min-width: 72em) {
+
+		.Footer-inner.container {
+			max-width: 60em;
+			padding: 0 3.75em;
+		}
+
+	}
+
+	@media (min-width: 72em) {
+
+		.Footer-inner.container {
+			max-width: 96em;
+			padding: 0 4.5em;
+		}
+
+	}
+
+</style>
+
 <body>
 
-<div class="Brand Header-brand" style="display: none;">
-
-	<div class="Logo Logo--header">
-
-		<div id="logo" class="Logo-inner"></div>
-
-	</div>
-
-</div>
-
-<footer id="rodape" class="Footer">
-
-	<div class="Footer-background"></div>
+<footer class="Footer tk-filson-soft grey-100 font-grey-800">
 
 	<div class="Footer-inner container">
 
-		<div class="Brand Footer-brand">
+		<section class="Footer-section">
 
-			<div class="Logo Logo--footer Footer-logo">
+			<h2>Formas de pagamento</h2>
 
-				<!--<div class="Logo-select-area">-->
+			<p>Trabalhamos com as princiapais bandeiras de Cartão de Crédito e Débito. Aceitamos Alelo e VR e também cartões Bunge Card, Taurus Card, Repom e Tip Card.</p>
 
-					<div id="footer-logo" class="Logo-inner"></div>
+			<span class="icon-mastercard"></span>
 
-				<!--</div>-->
+		</section>
 
-			</div>
+		<section class="Footer-section">
 
-			<div class="Brand-text">
+			<h2>Informações</h2>
 
-				<p>SP 270, KM 420.</p>
+			<dl>
 
-				<p class="soft-break">O que você merece,
-					exatamente onde você precisa.</p>
+				<dt>Endereço</dt>
+				<dd>Rodovia Raposo Tavares (SP 270), Km 420, Palmital - SP</dd>
+				<dt>Posto</dt>
+				<dd>(18) 3351-5101</dd>
+				<dt>Restaurante</dt>
+				<dd>(18) 3351-4801</dd>
+				<dt>Email</dt>
+				<dd><a href="mailto:contato@rotasul.com.br">contato@rotasul.com.br</a></dd>
 
-			</div>
+			</dl>
 
-		</div>
+		</section>
 
 	</div>
 
 </footer>
-
-<script src="dist/js/rotasul.js"></script>
-
-<script>
-
-	var logo = new Logo(document.getElementById('logo'), 'dist/svg/RotasulLogo.svg', function () {
-
-		logo.cloneTo(document.getElementById('footer-logo'));
-
-	});
-
-</script>
 
 </body>
 
