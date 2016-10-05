@@ -1,0 +1,83 @@
+
+/* Check */
+
+.Check {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	/*font-size: 18px;*/
+	/*background-color: #cecece;*/
+	/*max-width: 50%;*/
+}
+
+/* Check input */
+
+.Check input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+/* Check indicator (input display [square or circle]) */
+
+.Check-indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background: #bdbdbd;
+}
+
+/* Check indicator for radio input */
+
+.Check--radio .Check-indicator {
+	border-radius: 50%;
+}
+
+/* Check indicator hover / focus */
+
+.Check:hover input ~ .Check-indicator,
+.Check input:focus ~ .Check-indicator {
+	background: #ccc;
+}
+
+/* Checked input */
+
+.Check input:checked ~ .Check-indicator {
+	background: #ffa000;
+}
+
+/* Checked input and focused */
+
+.Check:hover input:not([disabled]):checked ~ .Check-indicator,
+.Check input:checked:focus ~ .Check-indicator {
+	background: #ff8f00;
+}
+
+/* Check indicator after */
+
+.Check-indicator:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+/* Check input checked indicator */
+
+.Check input:checked ~ .Check-indicator:after {
+	display: block;
+}
+
+/* Check radio input checked indicator */
+
+.Check--radio .Check-indicator:after {
+	left: 7px;
+	top: 7px;
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background: #fff;
+}

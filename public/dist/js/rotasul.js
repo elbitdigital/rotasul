@@ -1036,9 +1036,7 @@ var RequiredField = (function () {
 		this.viewport = viewport;
 
 		this.input = {};
-		this.label = {};
 		this.fieldClass = fieldClass;
-		this.message = {label: '', error: ''};
 
 		this.onClick = function () {
 
@@ -1054,20 +1052,20 @@ var RequiredField = (function () {
 
 			self.viewport.classList.add('has-focus');
 
-			if (self.input.viewport.value) {
+			if (self.input.viewport.value)
 				self.viewport.classList.remove('is-empty');
-			}
+
 		};
 
 		this.onBlur = function () {
 
 			self.viewport.classList.remove('has-focus');
 
-			if (self.input.viewport.value) {
-				self.viewport.classList.remove('is-empty');
-			} else {
+			if (!self.input.viewport.value)
 				self.viewport.classList.add('is-empty');
-			}
+			else
+				self.viewport.classList.remove('is-empty');
+
 		};
 
 		this.onInput = function () {
@@ -1076,7 +1074,6 @@ var RequiredField = (function () {
 				self.viewport.classList.remove('is-empty');
 				self.viewport.classList.add('has-label');
 				self.viewport.classList.add('is-valid');
-				self.label.viewport.innerText = self.message.label;
 			} else {
 				self.viewport.classList.remove('has-label');
 				self.viewport.classList.remove('is-valid');
@@ -1124,12 +1121,6 @@ var RequiredField = (function () {
 	RequiredField.prototype.getInputElement = function () {
 
 		this.input.viewport = this.viewport.querySelector(this.fieldClass);
-		this.label.viewport = this.viewport.querySelector('label');
-
-		this.message.label = this.label.viewport.innerText;
-		this.message.error = this.viewport.dataset.messageError;
-
-		console.log(this.message);
 
 		return !!this.input.viewport;
 
