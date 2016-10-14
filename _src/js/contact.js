@@ -6,7 +6,8 @@
 	var formSentCount = 0;
 	var formSentCountLimit = 2;
 
-	var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
+	// var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
+	var requestURL = 'http://service.elbit.com.br/mailman/check/valid/';
 	var formLocked = false;
 
 	var form = {
@@ -23,6 +24,10 @@
 	form.fields.cEmail = document.getElementById('cEmail');
 	form.fields.cMessage = document.getElementById('cMessage');
 	form.sendButton.viewport = document.getElementById('cSubmit');
+	form.fields.cReceiver = {
+		posto: document.getElementById('cAuto'),
+		restaurante: document.getElementById('cRest')
+	};
 
 	form.states = [
 		'is-error',
@@ -41,6 +46,15 @@
 			form.viewport.classList.add(state);
 
 		}
+
+	};
+
+	form.changeStateError = function (state, msg) {
+
+		this.changeState(state);
+
+		if (state == "is-error")
+			form.viewport.querySelector(".ContactFormStatus-text--error").innerText = msg;
 
 	};
 
@@ -134,17 +148,32 @@
 
 			if (formSentCount < formSentCountLimit) {
 
-				var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && form.fields.cMessage.value);
+				var allow = true;
+				var msg = "";
+
+				if (form.fields.cName.value && form.fields.cMessage.value) {
+
+					if (form.fields.cPhone.value || form.fields.cEmail.value) {
+
+						allow = true;
+
+					} else {
+						msg = "Não foi possível enviar, informe pelos menos um email ou um telefone.";
+						allow = false;
+					}
+
+				} else {
+					msg = "Não foi possível enviar, verifique os campos e tente novamente.";
+					allow = false;
+				}
+
+				// var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && form.fields.cMessage.value);
 
 				if (allow) {
 
-					// lock the form
 					formLocked = true;
-
-					// count the request
 					formSentCount++;
 
-					// get object data
 					var requestData = {
 						cName: form.fields.cName.value,
 						cPhone: form.fields.cPhone.value,
@@ -154,11 +183,10 @@
 						cMessage: form.fields.cMessage.value
 					};
 
-					// send
 					form.send(requestData, false);
 
 				} else {
-					form.changeState('is-error');
+					form.changeStateError('is-error', msg);
 				}
 
 			}

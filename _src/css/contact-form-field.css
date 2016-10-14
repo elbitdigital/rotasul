@@ -105,9 +105,11 @@
 	z-index: 1;
 }
 
-.ContactFormField.is-empty::after {
+.ContactFormField.is-error::after {
 	color: #d50000;
 }
+
+
 
 .ContactFormField.is-valid::after{
 	display: none;
@@ -142,7 +144,7 @@
 
 /* Contact Form Field empty style */
 
-.ContactFormField.is-empty {
+.ContactFormField.is-error {
 	border-color: #d50000;
 }
 
@@ -154,15 +156,20 @@
 
 /* Contact Form Field empty input/textarea style */
 
-.ContactFormField.is-empty:-moz-placeholder {color: rgba(213,0,0,0.5);} /* ff 18- */
-.ContactFormField.is-empty:-ms-input-placeholder {color: rgba(213,0,0,0.5);}
-.ContactFormField.is-empty::-webkit-input-placeholder {color: rgba(213,0,0,0.5);}
+.ContactFormField.is-error:-moz-placeholder {color: rgba(213,0,0,0.5);} /* ff 18- */
+.ContactFormField.is-error:-ms-input-placeholder {color: rgba(213,0,0,0.5);}
+.ContactFormField.is-error::-webkit-input-placeholder {color: rgba(213,0,0,0.5);}
 
 /* Contact Form Field empty input/textarea style (general) */
 
-.ContactFormField.is-empty input,
-.ContactFormField.is-empty textarea {
+.ContactFormField.is-error input,
+.ContactFormField.is-error textarea {
 	color: #d50000; /*red-a700*/
+}
+.ContactFormField.is-error label {
+	font-size: .725em;
+	font-weight: 500;
+	color: rgba(213,0,0,0.5);
 }
 
 @media (min-width: 48em) {
