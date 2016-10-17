@@ -141,7 +141,7 @@
 
 			<div class="ContactFormButton">
 
-				<button id="cSubmit" type="submit" value="Enviar" class="ContactFormField-button Button">
+				<button id="cSubmit" type="submit" value="Enviar" class="ContactFormField-button Button Button--blue">
 
 					<span>Enviar</span>
 
@@ -160,11 +160,8 @@
 <script>
 
 	var requiredFields = document.querySelectorAll('.ContactFormField');
-	for (var i = requiredFields.length; i--; ) {
-		(!requiredFields[i].classList.contains("ContactFormField--receiver"))
-				? requiredFields[i].requiredField = new RequiredField(requiredFields[i], '.ContactFormField-input')
-				: false;
-	}
+	for (var i = requiredFields.length; i--; )
+		requiredFields[i].requiredField = new RequiredField(requiredFields[i], '.ContactFormField-input');
 
 </script>
 

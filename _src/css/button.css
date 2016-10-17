@@ -31,12 +31,24 @@
 
 /* Amber button style */
 
-.Button-amber {
+.Button--amber {
 	background-color: #ffa000; /*700*/
 	color: #eee;
 }
 
-.Button-amber:active {
+.Button--amber:active {
 	background-color: #ff6f00; /*900*/
+	color: #e0e0e0;
+}
+
+/* Blue button style */
+
+.Button--blue {
+	background-color: #2196f3; /*500*/
+	color: #eee;
+}
+
+.Button--blue:active {
+	background-color: #1976d2; /*700*/
 	color: #e0e0e0;
 }

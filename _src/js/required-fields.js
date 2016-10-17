@@ -62,6 +62,7 @@ var RequiredField = (function () {
 			} else {
 
 				self.toggleLabel("default");
+				self.viewport.classList.remove('is-valid');
 				self.viewport.classList.remove('is-error');
 
 			}

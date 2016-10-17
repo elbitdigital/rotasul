@@ -6,8 +6,8 @@
 	var formSentCount = 0;
 	var formSentCountLimit = 2;
 
-	// var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
-	var requestURL = 'http://service.elbit.com.br/mailman/check/valid/';
+	var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
+	// var requestURL = 'http://service.elbit.com.br/mailman/check/valid/';
 	var formLocked = false;
 
 	var form = {
@@ -151,11 +151,20 @@
 				var allow = true;
 				var msg = "";
 
+				/* Form input validation */
+
 				if (form.fields.cName.value && form.fields.cMessage.value) {
 
 					if (form.fields.cPhone.value || form.fields.cEmail.value) {
 
-						allow = true;
+						if (!form.fields.cPhone.parentNode.classList.contains("is-error") && !form.fields.cEmail.parentNode.classList.contains("is-error")) {
+
+							allow = true;
+
+						} else {
+							msg = "Não foi possível enviar, informe os dados corretamente.";
+							allow = false;
+						}
 
 					} else {
 						msg = "Não foi possível enviar, informe pelos menos um email ou um telefone.";

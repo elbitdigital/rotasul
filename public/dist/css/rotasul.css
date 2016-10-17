@@ -138,15 +138,29 @@ body.is-night {
 
 /* Amber button style */
 
-.Button-amber {
+.Button--amber {
   background-color: #ffa000;
   /*700*/
   color: #eee;
 }
 
-.Button-amber:active {
+.Button--amber:active {
   background-color: #ff6f00;
   /*900*/
+  color: #e0e0e0;
+}
+
+/* Blue button style */
+
+.Button--blue {
+  background-color: #2196f3;
+  /*500*/
+  color: #eee;
+}
+
+.Button--blue:active {
+  background-color: #1976d2;
+  /*700*/
   color: #e0e0e0;
 }
 /* Check */
@@ -234,7 +248,7 @@ body.is-night {
 /* Contact Form Field */
 
 .ContactFormField {
-  border: solid 1px black;
+  border: solid 1px #424242;
   border-radius: 3px;
   display: block;
   margin-bottom: 1.5em;
@@ -250,6 +264,11 @@ body.is-night {
   width: 100%;
 }
 
+.ContactFormField textarea:focus,
+.ContactFormField input:focus {
+  outline: none;
+}
+
 .ContactForm-row .ContactFormField {
   min-width: 100%;
   margin-right: 1em;
@@ -261,29 +280,21 @@ body.is-night {
   flex: 1;
 }
 
-.ContactFormField--multiple {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column;
-  flex-flow: column;
-  position: relative;
-  width: 100%;
-}
+/*.ContactFormField input:-moz-placeholder,*/
 
-.ContactFormField--receiver {
-  display: block;
-  /*border: solid 1px black;*/
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  overflow: hidden;
-  padding: 1.5em 1em 1.5em;
-  position: relative;
-  text-align: left;
-  width: 100%;
-}
+/*.ContactFormField textarea:-moz-placeholder {color: ;}*/
+
+/*.ContactFormField input::-moz-placeholder,*/
+
+/*.ContactFormField textarea::-moz-placeholder {color: ;}*/
+
+/*.ContactFormField input:-ms-input-placeholder,*/
+
+/*.ContactFormField textarea:-ms-input-placeholder {color: ;}*/
+
+/*.ContactFormField input::-webkit-input-placeholder,*/
+
+/*.ContactFormField textarea::-webkit-input-placeholder {color: ;}*/
 
 /* Contact Form message field (textarea) */
 
@@ -298,13 +309,15 @@ body.is-night {
   font-size: 1em;
   width: 100%;
   padding: 0 .275em;
+  color: #424242;
 }
 
 /* Contact Form Field label */
 
 .ContactFormField label {
+  color: rgba(0,0,0,0.7);
   font-size: .875em;
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
   position: absolute;
   -webkit-transition: transform .3s;
@@ -325,18 +338,6 @@ body.is-night {
 
 /* VALIDATION STYLES */
 
-.ContactFormField.is-required::after {
-  color: #0069ff;
-  content: '*';
-  display: block;
-  font-size: 25px;
-  width: 25px;
-  position: absolute;
-  right: 10px;
-  top: 20px;
-  z-index: 1;
-}
-
 .ContactFormField.is-error::after {
   color: #d50000;
 }
@@ -348,11 +349,11 @@ body.is-night {
 /* Contact Form Field focused style */
 
 .ContactFormField.is-valid {
-  border-color: #80d8ff;
+  border-color: #ffab40;
 }
 
 .ContactFormField.has-focus {
-  border-color: #80d8ff;
+  border-color: #ffab40;
 }
 
 /* Contact Form Field labeled style */
@@ -378,15 +379,13 @@ body.is-night {
   border-color: #d50000;
 }
 
-/* Webkit fallback (hide placeholder on input focus) */
-
-.ContactFormField:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
 /* Contact Form Field empty input/textarea style */
 
 .ContactFormField.is-error:-moz-placeholder {
+  color: rgba(213,0,0,0.5);
+}
+
+.ContactFormField.is-error::-moz-placeholder {
   color: rgba(213,0,0,0.5);
 }
 
