@@ -85,16 +85,6 @@
 	width: 100%;
 }
 
-/* VALIDATION STYLES */
-
-.ContactFormField.is-error::after {
-	color: #d50000;
-}
-
-.ContactFormField.is-valid::after{
-	display: none;
-}
-
 /* Contact Form Field focused style */
 
 .ContactFormField.is-valid {
@@ -163,23 +153,4 @@
 		flex: 1;
 	}
 
-	/* Contact Form Field multiple */
-
-	.ContactFormField--multiple {
-		align-content: center;
-		-webkit-flex-flow: row;
-		flex-flow: row;
-		-webkit-justify-content: space-between;
-		justify-content: space-between;
-	}
-
-	/* Contatc Form Field options */
-
-	.ContactFormField-options {
-		align-content: center;
-		-webkit-flex-flow: row;
-		flex-flow: row;
-		-webkit-justify-content: space-around;
-		justify-content: space-around;
-	}
 }

@@ -633,8 +633,6 @@
 
 		var hr = (new Date()).getHours(); //get hours of the day in 24Hr format (0-23)
 
-		console.log(hr);
-
 		if (hr < 6 || hr > 17)
 			isNight();
 		else
@@ -660,7 +658,7 @@
 	var gallery = new Gallery(document.getElementById('gallery'));
 
 	var requiredFields = document.querySelectorAll('.ContactFormField');
-	for (var i = requiredFields.length; i--; )
+	for (var i = requiredFields.length; i--;)
 		requiredFields[i].requiredField = new RequiredField(requiredFields[i], '.ContactFormField-input');
 
 </script>

@@ -1,205 +1,204 @@
+/* Contact */
 
-	/* Contact */
+/* Contact email manipulation */
 
-	/* Contact email manipulation */
+var formSentCount = 0;
+var formSentCountLimit = 2;
 
-	var formSentCount = 0;
-	var formSentCountLimit = 2;
+var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
+// var requestURL = 'http://service.elbit.com.br/mailman/check/valid/';
+var formLocked = false;
 
-	var requestURL = 'http://service.elbit.com.br/mailman/rotasul/';
-	// var requestURL = 'http://service.elbit.com.br/mailman/check/valid/';
-	var formLocked = false;
+var form = {
+	viewport: document.getElementById('cForm')
+};
 
-	var form = {
-		viewport: document.getElementById('cForm')
-	};
+form.fields = {};
+form.sendButton = {};
 
-	form.fields = {};
-	form.sendButton = {};
+form.fields.cName = document.getElementById('cName');
+// form.fields.cCity = document.getElementById('cCity');
+// form.fields.cAddress = document.getElementById('cAddress');
+form.fields.cPhone = document.getElementById('cPhone');
+form.fields.cEmail = document.getElementById('cEmail');
+form.fields.cMessage = document.getElementById('cMessage');
+form.sendButton.viewport = document.getElementById('cSubmit');
+form.fields.cReceiver = {
+	posto: document.getElementById('cAuto'),
+	restaurante: document.getElementById('cRest')
+};
 
-	form.fields.cName = document.getElementById('cName');
-	// form.fields.cCity = document.getElementById('cCity');
-	// form.fields.cAddress = document.getElementById('cAddress');
-	form.fields.cPhone = document.getElementById('cPhone');
-	form.fields.cEmail = document.getElementById('cEmail');
-	form.fields.cMessage = document.getElementById('cMessage');
-	form.sendButton.viewport = document.getElementById('cSubmit');
-	form.fields.cReceiver = {
-		posto: document.getElementById('cAuto'),
-		restaurante: document.getElementById('cRest')
-	};
+form.states = [
+	'is-error',
+	'is-fail',
+	'is-sending',
+	'is-success'
+];
 
-	form.states = [
-		'is-error',
-		'is-fail',
-		'is-sending',
-		'is-success'
-	];
+form.changeState = function (state) {
 
-	form.changeState = function (state) {
+	if (form.viewport) {
 
-		if (form.viewport) {
+		for (var i = form.states.length; i--;)
+			form.viewport.classList.remove(form.states[i])
 
-			for (var i = form.states.length; i--; )
-				form.viewport.classList.remove(form.states[i])
+		form.viewport.classList.add(state);
 
-			form.viewport.classList.add(state);
+	}
 
-		}
+};
 
-	};
+form.changeStateError = function (state, msg) {
 
-	form.changeStateError = function (state, msg) {
+	this.changeState(state);
 
-		this.changeState(state);
+	if (state == "is-error")
+		form.viewport.querySelector(".ContactFormStatus-text--error").innerText = msg;
 
-		if (state == "is-error")
-			form.viewport.querySelector(".ContactFormStatus-text--error").innerText = msg;
+};
 
-	};
+// send the ajax request
+form.sendRequest = function (requestData) {
 
-	// send the ajax request
-	form.sendRequest = function(requestData) {
+	if (requestData) {
 
-		if (requestData) {
+		// vanilla js
+		var xhr = new XMLHttpRequest();
 
-			// vanilla js
-			var xhr = new XMLHttpRequest();
+		// "beforeSend"
+		formLocked = true;
+		form.changeState('is-sending');
 
-			// "beforeSend"
-			formLocked = true;
-			form.changeState('is-sending');
+		xhr.ontimeout = function (e) {
+			console.log(e);
+			form.changeState('is-fail');
+		};
 
-			xhr.ontimeout = function (e) {
-				console.log(e);
-				form.changeState('is-fail');
-			};
+		xhr.onerror = function () {
+			form.changeState('is-error');
+			//form.send(requestData, 5000);
+		};
 
-			xhr.onerror = function() {
-				form.changeState('is-error');
-				//form.send(requestData, 5000);
-			};
+		xhr.onreadystatechange = function (e) {
 
-			xhr.onreadystatechange = function(e) {
+			if (xhr.readyState == 4) {
 
-				if (xhr.readyState == 4) {
-
-					if (xhr.status == 200) {
-						console.log(xhr.responseText);
-						form.changeState('is-success');
-					} else {
-						form.changeState('is-error');
-					}
-
+				if (xhr.status == 200) {
+					console.log(xhr.responseText);
+					form.changeState('is-success');
+				} else {
+					form.changeState('is-error');
 				}
 
-				formLocked = false;
-
-			};
-
-			xhr.withCredentials = true;
-			xhr.open('GET', requestURL + "?" + form.requestParams(requestData), true);
-			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-			xhr.timeout = 12000;
-
-			xhr.send(null);
-
-		}
-
-	};
-
-	// transform object into uri string
-	form.requestParams = function (requestData) {
-
-		var y = '', e = encodeURIComponent;
-
-		for (var x in requestData) {
-			y += '&' + e(x) + '=' + e(requestData[x]);
-		}
-
-		//&_t= ==> equals to cache: false;
-		return y.slice(1) + '&_t=' + new Date().getTime();
-
-	};
-
-	// control the time delay to init the ajax request
-	form.send = function(requestData, delay) {
-
-		if (requestData) {
-
-			if (delay) {
-				setTimeout(function() {
-					form.sendRequest(requestData);
-				}, delay)
-			} else {
-				form.sendRequest(requestData);
 			}
 
+			formLocked = false;
+
+		};
+
+		xhr.withCredentials = true;
+		xhr.open('GET', requestURL + "?" + form.requestParams(requestData), true);
+		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		xhr.timeout = 12000;
+
+		xhr.send(null);
+
+	}
+
+};
+
+// transform object into uri string
+form.requestParams = function (requestData) {
+
+	var y = '', e = encodeURIComponent;
+
+	for (var x in requestData) {
+		y += '&' + e(x) + '=' + e(requestData[x]);
+	}
+
+	//&_t= ==> equals to cache: false;
+	return y.slice(1) + '&_t=' + new Date().getTime();
+
+};
+
+// control the time delay to init the ajax request
+form.send = function (requestData, delay) {
+
+	if (requestData) {
+
+		if (delay) {
+			setTimeout(function () {
+				form.sendRequest(requestData);
+			}, delay)
+		} else {
+			form.sendRequest(requestData);
 		}
 
-	};
+	}
 
-	// form submit button listener
-	form.sendButton.viewport.addEventListener('click', function (ev) {
+};
 
-		ev.preventDefault();
+// form submit button listener
+form.sendButton.viewport.addEventListener('click', function (ev) {
 
-		if (!formLocked) {
+	ev.preventDefault();
 
-			if (formSentCount < formSentCountLimit) {
+	if (!formLocked) {
 
-				var allow = true;
-				var msg = "";
+		if (formSentCount < formSentCountLimit) {
 
-				/* Form input validation */
+			var allow = true;
+			var msg = "";
 
-				if (form.fields.cName.value && form.fields.cMessage.value) {
+			/* Form input validation */
 
-					if (form.fields.cPhone.value || form.fields.cEmail.value) {
+			if (form.fields.cName.value && form.fields.cMessage.value) {
 
-						if (!form.fields.cPhone.parentNode.classList.contains("is-error") && !form.fields.cEmail.parentNode.classList.contains("is-error")) {
+				if (form.fields.cPhone.value || form.fields.cEmail.value) {
 
-							allow = true;
+					if (!form.fields.cPhone.parentNode.classList.contains("is-error") && !form.fields.cEmail.parentNode.classList.contains("is-error")) {
 
-						} else {
-							msg = "Não foi possível enviar, informe os dados corretamente.";
-							allow = false;
-						}
+						allow = true;
 
 					} else {
-						msg = "Não foi possível enviar, informe pelos menos um email ou um telefone.";
+						msg = "Não foi possível enviar, informe os dados corretamente.";
 						allow = false;
 					}
 
 				} else {
-					msg = "Não foi possível enviar, verifique os campos e tente novamente.";
+					msg = "Não foi possível enviar, informe pelos menos um email ou um telefone.";
 					allow = false;
 				}
 
-				// var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && form.fields.cMessage.value);
+			} else {
+				msg = "Não foi possível enviar, verifique os campos e tente novamente.";
+				allow = false;
+			}
 
-				if (allow) {
+			// var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && form.fields.cMessage.value);
 
-					formLocked = true;
-					formSentCount++;
+			if (allow) {
 
-					var requestData = {
-						cName: form.fields.cName.value,
-						cPhone: form.fields.cPhone.value,
-						cEmail: form.fields.cEmail.value,
-						cAddress: "",
-						cCity: "",
-						cMessage: form.fields.cMessage.value
-					};
+				formLocked = true;
+				formSentCount++;
 
-					form.send(requestData, false);
+				var requestData = {
+					cName: form.fields.cName.value,
+					cPhone: form.fields.cPhone.value,
+					cEmail: form.fields.cEmail.value,
+					cAddress: "",
+					cCity: "",
+					cMessage: form.fields.cMessage.value
+				};
 
-				} else {
-					form.changeStateError('is-error', msg);
-				}
+				form.send(requestData, false);
 
+			} else {
+				form.changeStateError('is-error', msg);
 			}
 
 		}
 
-	});
+	}
+
+});
